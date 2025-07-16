@@ -1,5 +1,4 @@
-
-  const menuToggle = document.createElement('div');
+const menuToggle = document.createElement('div');
   menuToggle.classList.add('menu-toggle');
   menuToggle.innerHTML = `
     <div></div>
@@ -12,4 +11,3 @@
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
   });
-
