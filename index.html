@@ -4,22 +4,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dipendra Pandey | Portfolio</title>
+  <title>Dipendra Pandey | Flutter Full-Stack Developer</title>
   <link rel="stylesheet" href="portfolio.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
   <!-- Navigation -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="container nav-container">
       <div class="brand">DP</div>
-      <nav class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#activity">Activity</a>
+        <a href="#achievements">Achievements</a>
         <a href="#contact">Contact</a>
       </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   </header>
 
@@ -27,16 +37,103 @@
   <section class="hero">
     <div class="container hero-container">
       <div class="hero-text">
+        <div class="eyebrow">Flutter Full-Stack Developer · 1+ yr professional · 2+ yr Flutter</div>
         <h1>Hi, I'm <span class="highlight">Dipendra Pandey</span></h1>
-        <p>Front-End Developer / .NET & Python Enthusiast</p>
+        <p>I build mobile apps end-to-end — Flutter on the front, Flask APIs and Oracle/MySQL on the
+          back — with a focus on offline-first, real-world reliability.</p>
         <div class="hero-buttons">
           <a href="#contact" class="btn">Contact Me</a>
-          <a href="#" class="btn btn-secondary">Download CV</a>
-          <a href="#" class="btn btn-play">▶ Watch the Video</a>
+          <a href="cv.pdf" class="btn btn-secondary" download>Download CV</a>
+        </div>
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span class="meta-num">2+</span>
+            <span class="meta-label">years Flutter</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-num">1+</span>
+            <span class="meta-label">yr professional</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-num">Full</span>
+            <span class="meta-label">stack: app to DB</span>
+          </div>
         </div>
       </div>
-      <div class="hero-image">
-        <img src="Myphoto.jpg"Dipendra Pandey">
+
+      <div class="phone-col">
+        <div class="phone-stage" id="phoneStage">
+          <div class="phone-glow"></div>
+          <div class="orbit-icon oi-1">🎯</div>
+          <div class="orbit-icon oi-2">🐦</div>
+          <div class="orbit-icon oi-3">🐍</div>
+          <div class="orbit-icon oi-4">🗄️</div>
+          <div id="phone">
+            <div class="phone-back"></div>
+            <div class="phone-edge-l"></div>
+            <div class="phone-edge-r"></div>
+            <div class="phone-face">
+              <div class="notch-bar"></div>
+
+              <!-- Screen 0: Dashboard -->
+              <div class="screen active" data-screen="0">
+                <div class="ph-profile">
+                  <div class="ph-avatar">DP</div>
+                  <div>
+                    <div class="ph-name">Dipendra Pandey</div>
+                    <div class="ph-role">Flutter Full-Stack Dev</div>
+                  </div>
+                </div>
+                <div class="ph-stat-grid">
+                  <div class="ph-stat"><span>2+</span>yr Flutter</div>
+                  <div class="ph-stat"><span>1+</span>yr pro</div>
+                  <div class="ph-stat"><span>2</span>projects</div>
+                  <div class="ph-stat"><span>Full</span>stack</div>
+                </div>
+                <div class="ph-label">core stack</div>
+                <div class="ph-chip-row">
+                  <span>Riverpod</span><span>Flask</span><span>Oracle</span><span>GitHub</span>
+                </div>
+                <div class="ph-cta">View full profile →</div>
+              </div>
+
+              <!-- Screen 1: Digital Khata app -->
+              <div class="screen" data-screen="1">
+                <div class="ph-app-header">
+                  <span>Digital Khata</span>
+                  <span class="ph-badge">offline</span>
+                </div>
+                <div class="ph-balance-card">
+                  <div class="ph-balance-label">This month</div>
+                  <div class="ph-balance-num">— Rs —</div>
+                </div>
+                <div class="ph-tx-row"><span class="ph-dot green"></span>Shop expense <span class="ph-tx-amt">− —</span></div>
+                <div class="ph-tx-row"><span class="ph-dot amber"></span>Personal <span class="ph-tx-amt">− —</span></div>
+                <div class="ph-tx-row"><span class="ph-dot green"></span>Backup synced <span class="ph-tx-amt">✓</span></div>
+                <div class="ph-cta">Export to Excel ↧</div>
+              </div>
+
+              <!-- Screen 2: Coming soon -->
+              <div class="screen" data-screen="2">
+                <div class="ph-app-header">
+                  <span>Industry App</span>
+                  <span class="ph-badge amber">planning</span>
+                </div>
+                <div class="ph-coming">
+                  <div class="ph-coming-icon">🚧</div>
+                  <div class="ph-coming-text">Architecture &amp; planning stage — details coming soon.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="phone-tabs" id="phoneTabs">
+          <div class="phone-tab active" data-idx="0" title="Dashboard"></div>
+          <div class="phone-tab" data-idx="1" title="Digital Khata"></div>
+          <div class="phone-tab" data-idx="2" title="Industry App"></div>
+        </div>
+        <div class="drag-hint">&#8596; drag phone to rotate · tap dots to switch screens</div>
       </div>
     </div>
   </section>
@@ -44,92 +141,370 @@
   <!-- About -->
   <section id="about" class="section">
     <div class="container">
-      <h2>About Me</h2>
-      <p>I am currently studying B.Sc. CSIT at Tribhuvan University and learning full-stack development. I enjoy building projects. I am also fluent in Python and .NET.</p>
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">get to know me</div>
+          <h2>About Me</h2>
+        </div>
+      </div>
+      <div class="about-grid">
+        <p class="about-text">
+          I'm a Flutter full-stack developer with over two years of Flutter experience and about a year
+          working professionally across the full stack — building the app, the API, and the database
+          behind it. I mainly reach for Riverpod for state management, but I'm equally comfortable
+          with GetX and Provider depending on the project. On the backend I build my own APIs with
+          Flask, backed by Oracle (my main database) and MySQL. I'm currently in my final year of
+          B.Sc. CSIT (8th semester) at Tribhuvan University, balancing coursework with real
+          professional projects.
+        </p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div>
+              <div class="timeline-title">Flutter Full-Stack Developer</div>
+              <div class="timeline-sub">~1 year professional experience</div>
+              <p class="timeline-text">Building mobile apps end-to-end: Flutter front-end, Flask REST
+                APIs, and Oracle/MySQL data layers.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div>
+              <div class="timeline-title">B.Sc. CSIT</div>
+              <div class="timeline-sub">Tribhuvan University · 8th semester (final year)</div>
+              <p class="timeline-text">Coursework in data structures, databases, and software
+                engineering, alongside shipped Flutter projects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="now-strip">
+        <div class="now-label">// currently learning</div>
+        <div class="chip-row">
+          <span class="chip">System design basics</span>
+          <span class="chip">Advanced Flutter animations</span>
+          <span class="chip">Clean architecture at scale</span>
+        </div>
+        <p class="now-note">Edit this list any time your focus shifts — it's meant to stay current.</p>
+      </div>
     </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="section">
+  <section id="skills" class="section section-alt">
     <div class="container">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>HTML, CSS, JavaScript</li>
-        <li>Python, .NET</li>
-        <li>Git, GitHub</li>
-      </ul>
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">what I work with</div>
+          <h2>Skills</h2>
+        </div>
+        <p class="section-note">Adjust the levels below to match your own honest self-assessment.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Mobile / Flutter</h3>
+          <div class="skill-row">
+            <span>Flutter &amp; Dart</span>
+            <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>Riverpod</span>
+            <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>GetX / Provider</span>
+            <div class="bar"><div class="bar-fill" style="width:70%"></div></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Backend &amp; data</h3>
+          <div class="skill-row">
+            <span>Flask (REST APIs)</span>
+            <div class="bar"><div class="bar-fill" style="width:65%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>Oracle</span>
+            <div class="bar"><div class="bar-fill" style="width:65%"></div></div>
+          </div>
+          <div class="skill-row">
+            <span>MySQL</span>
+            <div class="bar"><div class="bar-fill" style="width:55%"></div></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Tools &amp; workflow</h3>
+          <div class="chip-row">
+            <span class="chip">GitHub</span>
+            <span class="chip">GitLab</span>
+            <span class="chip">GitHub Actions</span>
+            <span class="chip">Google APIs</span>
+            <span class="chip">Offline-first design</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Projects -->
   <section id="projects" class="section">
     <div class="container">
-      <h2>Projects</h2>
-      <div class="project-card">
-        <h3>Clock</h3>
-        <p>A simple responsive and online base clock created out of curiosity.</p>
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">selected work</div>
+          <h2>Projects</h2>
+        </div>
+        <p class="section-note">One shipped, one in progress — replace links and details as they
+          firm up.</p>
       </div>
-      <div class="project-card">
-        <h3>Calculator</h3>
-        <p>A JavaScript-based calculator hosted on GitHub Pages.</p>
+
+      <div class="case open" data-case="0">
+        <div class="case-head" onclick="toggleCase(this)">
+          <div class="case-index">01</div>
+          <div class="case-title-group">
+            <div class="case-title">Digital Khata — Expense Tracker</div>
+            <div class="case-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Riverpod</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Oracle</span>
+              <span class="tag">Google APIs</span>
+            </div>
+          </div>
+          <div class="case-chevron">&#9662;</div>
+        </div>
+        <div class="case-body">
+          <div class="case-body-inner">
+            <div>
+              <div class="case-col-label">What it does</div>
+              <p class="case-text">A personal- and shop-level expense tracker that works offline
+                first, then syncs when connectivity returns. Supports exporting records to Excel and
+                backing up / restoring data, with Google API integration for supporting features.</p>
+              <div class="case-col-label">Stack</div>
+              <p class="case-text">Flutter + Riverpod on the client, a Flask API on the backend, and
+                Oracle for data storage. Version-controlled on GitHub.</p>
+            </div>
+            <div>
+              <div class="case-col-label">Highlights</div>
+              <ul class="case-list">
+                <li>Offline-first architecture with background sync</li>
+                <li>Excel export for record-keeping outside the app</li>
+                <li>Backup &amp; reload flow to prevent data loss</li>
+                <li>Google API integration for supporting features</li>
+              </ul>
+            </div>
+          </div>
+          <div class="arch-diagram-wrap">
+            <div class="case-col-label" style="padding: 0 24px;">How it's wired together</div>
+            <svg viewBox="0 0 720 140" class="arch-diagram" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="var(--text-faint)"></path>
+                </marker>
+              </defs>
+              <!-- Flutter app -->
+              <rect x="10" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--green)" stroke-width="1.5"></rect>
+              <text x="75" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Flutter</text>
+              <text x="75" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">Riverpod UI</text>
+
+              <!-- Local DB -->
+              <rect x="195" y="10" width="130" height="55" rx="10" fill="var(--bg-card-2)" stroke="var(--line-strong)" stroke-width="1.5"></rect>
+              <text x="260" y="34" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Local DB</text>
+              <text x="260" y="50" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">offline cache</text>
+
+              <!-- Sync engine -->
+              <rect x="195" y="80" width="130" height="55" rx="10" fill="var(--bg-card-2)" stroke="var(--amber)" stroke-width="1.5"></rect>
+              <text x="260" y="104" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Sync Engine</text>
+              <text x="260" y="120" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">background job</text>
+
+              <!-- Flask API -->
+              <rect x="380" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--green)" stroke-width="1.5"></rect>
+              <text x="445" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Flask API</text>
+              <text x="445" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">REST endpoints</text>
+
+              <!-- Oracle DB -->
+              <rect x="565" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--line-strong)" stroke-width="1.5"></rect>
+              <text x="630" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Oracle DB</text>
+              <text x="630" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">persistent store</text>
+
+              <!-- arrows -->
+              <line x1="140" y1="60" x2="192" y2="38" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
+              <line x1="140" y1="80" x2="192" y2="105" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
+              <line x1="325" y1="108" x2="378" y2="75" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
+              <line x1="510" y1="70" x2="562" y2="70" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
+            </svg>
+          </div>
+        </div>
       </div>
-      <div class="project-card">
-        <h3>Tic Tac Toe</h3>
-        <p>A fully functioned JavaScript-based Tic Tac Toe game hosted on GitHub Pages.</p>
+
+      <div class="case" data-case="1">
+        <div class="case-head" onclick="toggleCase(this)">
+          <div class="case-index">02</div>
+          <div class="case-title-group">
+            <div class="case-title">Industry-level App <span class="status-pill">Planning stage</span></div>
+            <div class="case-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Oracle</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+          </div>
+          <div class="case-chevron">&#9662;</div>
+        </div>
+        <div class="case-body">
+          <div class="case-body-inner">
+            <div>
+              <div class="case-col-label">Status</div>
+              <p class="case-text">Currently in the architecture and planning phase. This card will
+                fill in with real details — problem, approach, and outcomes — as the build
+                progresses.</p>
+            </div>
+            <div>
+              <div class="case-col-label">Planned stack</div>
+              <p class="case-text">Flutter front-end, Flask backend, Oracle/MySQL for data, with
+                GitHub Actions for CI/CD.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="project-card">
-        <h3>Spotify Clone</h3>
-        <p>A JavaScript-based clone of Spotify app hosted on GitHub Pages.</p>
+
+      <div class="project-card project-card-cta">
+        <div>
+          <h3>More on GitHub</h3>
+          <p>Earlier practice projects (Clock, Calculator, Tic Tac Toe, and more) are also on my
+            profile.</p>
+        </div>
+        <a href="https://github.com/Dipu-111" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit
+          GitHub →</a>
       </div>
-      <div class="project-card">
-        <h3>Registration Form</h3>
-        <p>A JavaScript-based Registration form.</p>
+
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">along the way</div>
+          <h2>Achievements &amp; Certifications</h2>
+        </div>
+        <p class="section-note">Add your certificates, hackathon results, or coursework awards here.</p>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="achievement-icon">🎓</div>
+          <div>
+            <div class="achievement-title">Add a certification</div>
+            <div class="achievement-sub">Issuer · Year</div>
+          </div>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon">🏆</div>
+          <div>
+            <div class="achievement-title">Add a hackathon or contest</div>
+            <div class="achievement-sub">Event · Result</div>
+          </div>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon">📘</div>
+          <div>
+            <div class="achievement-title">Add a course</div>
+            <div class="achievement-sub">Platform · Year</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  
 
   <!-- Contact -->
   <section id="contact" class="section">
     <div class="container">
-      <h2>Contact</h2>
-      <p>Phone: 9867318378</p>
-      <p>Email: dipenpandey111@email.com</p>
-      <p>GitHub: <a href="https://github.com/Dipu-111" target="_blank">github.com/Dipu-111</a></p>
-      <div class="social-links">
-  <a href="www.linkedin.com/in/dipendra-pandey-3ba68b373" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
-    <svg role="img" viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
-      <title>LinkedIn</title>
-      <path d="M20.452 20.452h-3.554v-5.569c0-1.328-.025-3.036-1.849-3.036-1.851 0-2.134 1.446-2.134 2.941v5.664H9.357V9h3.414v1.561h.047c.476-.9 1.637-1.849 3.369-1.849 3.605 0 4.27 2.373 4.27 5.458v6.282zM5.337 7.433c-1.144 0-2.07-.927-2.07-2.07 0-1.144.926-2.07 2.07-2.07 1.144 0 2.07.926 2.07 2.07 0 1.143-.926 2.07-2.07 2.07zM6.93 20.452H3.744V9h3.186v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.728v20.543C0 23.224.792 24 1.771 24h20.451C23.208 24 24 23.224 24 22.271V1.728C24 .774 23.208 0 22.225 0z"/>
-    </svg>
-  </a>
-  <a href="https://www.facebook.com/share/198tDtkSfx/?mibextid=qi2Omg" target="_blank" aria-label="Facebook" rel="noopener noreferrer">
-    <svg role="img" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
-      <title>Facebook</title>
-      <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h11.49v-9.294H9.691v-3.622h3.124V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.098 2.795.142v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.59l-.467 3.622h-3.123V24h6.116C23.407 24 24 23.407 24 22.675V1.325C24 .593 23.407 0 22.675 0z"/>
-    </svg>
-  </a>
-  <a href="https://www.instagram.com/dip.en.dra?igsh=NGNhOGI2azQzdTY3 target="_blank" aria-label="Instagram" rel="noopener noreferrer">
-    <svg role="img" viewBox="0 0 24 24" fill="#E4405F" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
-      <title>Instagram</title>
-      <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.5 1.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm-4.25 1.75a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"/>
-    </svg>
-  </a>
-  <a href="https://wa.me/9779867318378" target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">
-  <svg role="img" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
-    <title>WhatsApp</title>
-    <path d="M20.52 3.48A11.77 11.77 0 0012 0C5.37 0 0 5.37 0 12c0 2.1.55 4.08 1.52 5.81L0 24l6.48-1.51A11.91 11.91 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.2-3.48-8.52zM12 21.5c-1.78 0-3.5-.47-4.97-1.36l-.36-.22-3.83.89.85-3.75-.24-.38A9.42 9.42 0 012.5 12c0-5.24 4.26-9.5 9.5-9.5s9.5 4.26 9.5 9.5-4.26 9.5-9.5 9.5zm5.32-6.48c-.29-.15-1.7-.83-1.97-.92-.26-.1-.45-.15-.64.15-.19.29-.74.92-.91 1.11-.17.19-.34.21-.63.07a8.47 8.47 0 01-2.49-1.53 9.41 9.41 0 01-1.75-2.17c-.18-.31 0-.48.13-.63.13-.13.29-.33.44-.5a1.98 1.98 0 00.3-.51c.1-.19.05-.36-.02-.51-.07-.15-.63-1.53-.87-2.09-.23-.55-.46-.47-.64-.48l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.46 0 1.46 1.02 2.88 1.17 3.08.15.2 2.03 3.1 4.93 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.55-.08 1.7-.69 1.94-1.35.24-.66.24-1.22.17-1.35-.07-.13-.26-.2-.55-.36z"/>
-  </svg>
-</a>
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">get in touch</div>
+          <h2>Contact</h2>
+        </div>
+        <p class="section-note">Open to Flutter / full-stack mobile roles and freelance work.</p>
+      </div>
 
-</div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><strong>Phone:</strong> 9867318378</p>
+          <p><strong>Email:</strong> dipenpandey111@email.com</p>
+          <p><strong>GitHub:</strong>
+            <a href="https://github.com/Dipu-111" target="_blank" rel="noopener noreferrer">github.com/Dipu-111</a>
+          </p>
+          <p><strong>GitLab:</strong>
+            <a href="#" target="_blank" rel="noopener noreferrer">add your GitLab link</a>
+          </p>
 
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/dipendra-pandey-3ba68b373" target="_blank" aria-label="LinkedIn"
+              rel="noopener noreferrer">
+              <svg role="img" viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg" width="30"
+                height="30">
+                <title>LinkedIn</title>
+                <path
+                  d="M20.452 20.452h-3.554v-5.569c0-1.328-.025-3.036-1.849-3.036-1.851 0-2.134 1.446-2.134 2.941v5.664H9.357V9h3.414v1.561h.047c.476-.9 1.637-1.849 3.369-1.849 3.605 0 4.27 2.373 4.27 5.458v6.282zM5.337 7.433c-1.144 0-2.07-.927-2.07-2.07 0-1.144.926-2.07 2.07-2.07 1.144 0 2.07.926 2.07 2.07 0 1.143-.926 2.07-2.07 2.07zM6.93 20.452H3.744V9h3.186v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.728v20.543C0 23.224.792 24 1.771 24h20.451C23.208 24 24 23.224 24 22.271V1.728C24 .774 23.208 0 22.225 0z" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/share/198tDtkSfx/?mibextid=qi2Omg" target="_blank" aria-label="Facebook"
+              rel="noopener noreferrer">
+              <svg role="img" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg" width="30"
+                height="30">
+                <title>Facebook</title>
+                <path
+                  d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h11.49v-9.294H9.691v-3.622h3.124V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.098 2.795.142v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.59l-.467 3.622h-3.123V24h6.116C23.407 24 24 23.407 24 22.675V1.325C24 .593 23.407 0 22.675 0z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/dip.en.dra?igsh=NGNhOGI2azQzdTY3" target="_blank"
+              aria-label="Instagram" rel="noopener noreferrer">
+              <svg role="img" viewBox="0 0 24 24" fill="#E4405F" xmlns="http://www.w3.org/2000/svg" width="30"
+                height="30">
+                <title>Instagram</title>
+                <path
+                  d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.5 1.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm-4.25 1.75a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
+              </svg>
+            </a>
+            <a href="https://wa.me/9779867318378" target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">
+              <svg role="img" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg" width="30"
+                height="30">
+                <title>WhatsApp</title>
+                <path
+                  d="M20.52 3.48A11.77 11.77 0 0012 0C5.37 0 0 5.37 0 12c0 2.1.55 4.08 1.52 5.81L0 24l6.48-1.51A11.91 11.91 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.2-3.48-8.52zM12 21.5c-1.78 0-3.5-.47-4.97-1.36l-.36-.22-3.83.89.85-3.75-.24-.38A9.42 9.42 0 012.5 12c0-5.24 4.26-9.5 9.5-9.5s9.5 4.26 9.5 9.5-4.26 9.5-9.5 9.5zm5.32-6.48c-.29-.15-1.7-.83-1.97-.92-.26-.1-.45-.15-.64.15-.19.29-.74.92-.91 1.11-.17.19-.34.21-.63.07a8.47 8.47 0 01-2.49-1.53 9.41 9.41 0 01-1.75-2.17c-.18-.31 0-.48.13-.63.13-.13.29-.33.44-.5a1.98 1.98 0 00.3-.51c.1-.19.05-.36-.02-.51-.07-.15-.63-1.53-.87-2.09-.23-.55-.46-.47-.64-.48l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.46 0 1.46 1.02 2.88 1.17 3.08.15.2 2.03 3.1 4.93 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.55-.08 1.7-.69 1.94-1.35.24-.66.24-1.22.17-1.35-.07-.13-.26-.2-.55-.36z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xkodewpj" method="POST">
+  <label>
+    Name
+    <input type="text" name="name" required placeholder="Your name">
+  </label>
+  <label>
+    Email
+    <input type="email" name="_replyto" required placeholder="you@example.com">
+  </label>
+  <label>
+    Message
+    <textarea name="message" rows="4" required placeholder="What would you like to say?"></textarea>
+  </label>
+  <button type="submit" class="btn">Send Message</button>
+</form>
+      </div>
     </div>
-    
   </section>
-  <script src="portfolio.js">
 
-</script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Dipendra Pandey</span>
+      <a href="#" id="backToTop">Back to top ↑</a>
+    </div>
+  </footer>
 
+  <script src="portfolio.js"></script>
 </body>
+
 </html>
