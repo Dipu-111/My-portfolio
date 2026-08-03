@@ -12,7 +12,7 @@
   --bg-card-2: #1e2438;
   --text: #e7e9ef;
   --text-dim: #9ca0af;
-  --text-faint: #656b7e;
+  --text-faint: #868ca0;
   --green: #57d687;
   --green-dark: #0c111d;
   --green-tint: rgba(87, 214, 135, 0.12);
@@ -1251,4 +1251,61 @@ a { color: inherit; }
   .orbit-icon {
     display: none;
   }
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.repo-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.repo-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.repo-name {
+  color: white;
+  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.repo-stars {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--amber);
+}
+
+.repo-desc {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  min-height: 40px;
+}
+
+.repo-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repo-meta a {
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .repo-grid { grid-template-columns: 1fr; }
 }
