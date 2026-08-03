@@ -5,6 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dipendra Pandey | Flutter Full-Stack Developer</title>
+  <meta name="description" content="Dipendra Pandey — Flutter Full-Stack Developer building offline-first mobile apps with Flask and Oracle/MySQL." />
+
+<!-- Open Graph / social preview -->
+<meta property="og:title" content="Dipendra Pandey | Flutter Full-Stack Developer" />
+<meta property="og:description" content="Flutter + Flask + Oracle developer. 2+ years Flutter, 1+ year professional full-stack experience." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://yourdomain.com/preview.png" />
+<meta property="og:url" content="https://yourdomain.com" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dipendra Pandey | Flutter Full-Stack Developer" />
+<meta name="twitter:description" content="Flutter + Flask + Oracle developer building offline-first mobile apps." />
+<meta name="twitter:image" content="https://yourdomain.com/preview.png" />
+
+<link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="Portfolio.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +58,7 @@
           back — with a focus on offline-first, real-world reliability.</p>
         <div class="hero-buttons">
           <a href="#contact" class="btn">Contact Me</a>
-          <a href="cv.pdf" class="btn btn-secondary" download>Download CV</a>
+          <a href="Dipendra_Pandey_CV.pdf" class="btn btn-secondary" download>Download CV</a>
         </div>
         <div class="hero-meta">
           <div class="meta-item">
@@ -186,7 +201,7 @@
           <span class="chip">Advanced Flutter animations</span>
           <span class="chip">Clean architecture at scale</span>
         </div>
-        <p class="now-note">Edit this list any time your focus shifts — it's meant to stay current.</p>
+       
       </div>
     </div>
   </section>
@@ -248,132 +263,322 @@
 
   <!--
   <!-- Projects -->
-  <!--
-  <section id="projects" class="section">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="section-eyebrow">selected work</div>
-          <h2>Projects</h2>
-        </div>
-        <p class="section-note">One shipped, one in progress — replace links and details as they
-          firm up.</p>
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">selected work</div>
+        <h2>Projects</h2>
       </div>
-
-      <div class="case open" data-case="0">
-        <div class="case-head" onclick="toggleCase(this)">
-          <div class="case-index">01</div>
-          <div class="case-title-group">
-            <div class="case-title">Digital Khata — Expense Tracker</div>
-            <div class="case-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">Riverpod</span>
-              <span class="tag">Flask</span>
-              <span class="tag">Oracle</span>
-              <span class="tag">Google APIs</span>
-            </div>
-          </div>
-          <div class="case-chevron">&#9662;</div>
-        </div>
-        <div class="case-body">
-          <div class="case-body-inner">
-            <div>
-              <div class="case-col-label">What it does</div>
-              <p class="case-text">A personal- and shop-level expense tracker that works offline
-                first, then syncs when connectivity returns. Supports exporting records to Excel and
-                backing up / restoring data, with Google API integration for supporting features.</p>
-              <div class="case-col-label">Stack</div>
-              <p class="case-text">Flutter + Riverpod on the client, a Flask API on the backend, and
-                Oracle for data storage. Version-controlled on GitHub.</p>
-            </div>
-            <div>
-              <div class="case-col-label">Highlights</div>
-              <ul class="case-list">
-                <li>Offline-first architecture with background sync</li>
-                <li>Excel export for record-keeping outside the app</li>
-                <li>Backup &amp; reload flow to prevent data loss</li>
-                <li>Google API integration for supporting features</li>
-              </ul>
-            </div>
-          </div>
-          <div class="arch-diagram-wrap">
-            <div class="case-col-label" style="padding: 0 24px;">How it's wired together</div>
-            <svg viewBox="0 0 720 140" class="arch-diagram" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                  <path d="M0,0 L6,3 L0,6 Z" fill="var(--text-faint)"></path>
-                </marker>
-              </defs>
-              <rect x="10" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--green)" stroke-width="1.5"></rect>
-              <text x="75" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Flutter</text>
-              <text x="75" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">Riverpod UI</text>
-              <rect x="195" y="10" width="130" height="55" rx="10" fill="var(--bg-card-2)" stroke="var(--line-strong)" stroke-width="1.5"></rect>
-              <text x="260" y="34" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Local DB</text>
-              <text x="260" y="50" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">offline cache</text>
-              <rect x="195" y="80" width="130" height="55" rx="10" fill="var(--bg-card-2)" stroke="var(--amber)" stroke-width="1.5"></rect>
-              <text x="260" y="104" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Sync Engine</text>
-              <text x="260" y="120" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">background job</text>
-              <rect x="380" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--green)" stroke-width="1.5"></rect>
-              <text x="445" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Flask API</text>
-              <text x="445" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">REST endpoints</text>
-              <rect x="565" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--line-strong)" stroke-width="1.5"></rect>
-              <text x="630" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Oracle DB</text>
-              <text x="630" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">persistent store</text>
-              <line x1="140" y1="60" x2="192" y2="38" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
-              <line x1="140" y1="80" x2="192" y2="105" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
-              <line x1="325" y1="108" x2="378" y2="75" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
-              <line x1="510" y1="70" x2="562" y2="70" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <div class="case" data-case="1">
-        <div class="case-head" onclick="toggleCase(this)">
-          <div class="case-index">02</div>
-          <div class="case-title-group">
-            <div class="case-title">Industry-level App <span class="status-pill">Planning stage</span></div>
-            <div class="case-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">Flask</span>
-              <span class="tag">Oracle</span>
-              <span class="tag">GitHub Actions</span>
-            </div>
-          </div>
-          <div class="case-chevron">&#9662;</div>
-        </div>
-        <div class="case-body">
-          <div class="case-body-inner">
-            <div>
-              <div class="case-col-label">Status</div>
-              <p class="case-text">Currently in the architecture and planning phase. This card will
-                fill in with real details — problem, approach, and outcomes — as the build
-                progresses.</p>
-            </div>
-            <div>
-              <div class="case-col-label">Planned stack</div>
-              <p class="case-text">Flutter front-end, Flask backend, Oracle/MySQL for data, with
-                GitHub Actions for CI/CD.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card project-card-cta">
-        <div>
-          <h3>More on GitHub</h3>
-          <p>Earlier practice projects (Clock, Calculator, Tic Tac Toe, and more) are also on my
-            profile.</p>
-        </div>
-        <a href="https://github.com/Dipu-111" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit
-          GitHub →</a>
-      </div>
-
+      <p class="section-note">Enterprise work built with a team, plus personal builds on the
+        side.</p>
     </div>
-  </section>
-  -->
 
-  <!--
+    <!-- Case 01: SFA -->
+    <div class="case open" data-case="0">
+      <div class="case-head" onclick="toggleCase(this)">
+        <div class="case-index">01</div>
+        <div class="case-title-group">
+          <div class="case-title">SFA — Sales Force Automation <span class="status-pill">In production</span></div>
+          <div class="case-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Riverpod</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Oracle</span>
+          </div>
+        </div>
+        <div class="case-chevron">&#9662;</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div>
+            <div class="case-col-label">What it does</div>
+            <p class="case-text">A field sales tool that helps sales reps manage daily customer
+              visits, plan routes/beats, and track performance against targets — all on mobile,
+              built for reps working out in the field.</p>
+            <div class="case-col-label">Stack</div>
+            <p class="case-text">Flutter with Riverpod state management, a Flask REST API, and
+              Oracle as the backend database.</p>
+          </div>
+          <div>
+            <div class="case-col-label">Key features</div>
+            <ul class="case-list">
+              <li>Customer visit tracking with location capture</li>
+              <li>Beat / route planning and management</li>
+              <li>Sales vs. collection performance reporting</li>
+              <li>Team-built module, part of the wider development team</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 02: CRM -->
+    <div class="case" data-case="1">
+      <div class="case-head" onclick="toggleCase(this)">
+        <div class="case-index">02</div>
+        <div class="case-title-group">
+          <div class="case-title">CRM — Lead &amp; Customer Management <span class="status-pill">In production</span></div>
+          <div class="case-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Riverpod</span>
+            <span class="tag">Freezed</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Oracle</span>
+          </div>
+        </div>
+        <div class="case-chevron">&#9662;</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div>
+            <div class="case-col-label">What it does</div>
+            <p class="case-text">Manages the sales pipeline from lead capture through to close —
+              tracking each lead's stage, history, and related quotations, with dashboards
+              summarizing wins, losses, and pending deals.</p>
+            <div class="case-col-label">Stack</div>
+            <p class="case-text">Flutter with Freezed for type-safe, JSON-serializable models,
+              Riverpod for state, a Flask API, and Oracle for storage.</p>
+          </div>
+          <div>
+            <div class="case-col-label">Key features</div>
+            <ul class="case-list">
+              <li>Multi-stage lead pipeline with full timeline history</li>
+              <li>Quotation generation tied to leads</li>
+              <li>Win/loss dashboard and lead reporting</li>
+              <li>In-app notifications for lead updates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 03: HRM / ESS -->
+    <div class="case" data-case="2">
+      <div class="case-head" onclick="toggleCase(this)">
+        <div class="case-index">03</div>
+        <div class="case-title-group">
+          <div class="case-title">HRM / ESS — Employee Self-Service <span class="status-pill">In production</span></div>
+          <div class="case-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Riverpod</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Oracle</span>
+          </div>
+        </div>
+        <div class="case-chevron">&#9662;</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div>
+            <div class="case-col-label">What it does</div>
+            <p class="case-text">A mobile self-service portal for employees — profile management,
+              leave requests, company events, holidays, and policy documents, all in one app.</p>
+            <div class="case-col-label">Stack</div>
+            <p class="case-text">Flutter with Riverpod on the client, backed by a Flask API and
+              Oracle for company/HR data.</p>
+          </div>
+          <div>
+            <div class="case-col-label">Key features</div>
+            <ul class="case-list">
+              <li>Employee profile view &amp; edit</li>
+              <li>Leave request submission and tracking</li>
+              <li>Company events, holiday calendar, and policy docs</li>
+              <li>Daily shift/task notes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 04: ERP -->
+    <div class="case" data-case="3">
+      <div class="case-head" onclick="toggleCase(this)">
+        <div class="case-index">04</div>
+        <div class="case-title-group">
+          <div class="case-title">ERP — Core Enterprise Platform <span class="status-pill">In production</span></div>
+          <div class="case-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Riverpod</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Oracle</span>
+          </div>
+        </div>
+        <div class="case-chevron">&#9662;</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div>
+            <div class="case-col-label">What it does</div>
+            <p class="case-text">The core enterprise system that SFA, CRM, and HRM/ESS plug into —
+              handling company setup, master data, and shared services that power the other
+              modules.</p>
+            <div class="case-col-label">Stack</div>
+            <p class="case-text">Flutter mobile client, Flask REST API backend, Oracle as the
+              primary database.</p>
+          </div>
+          <div>
+            <div class="case-col-label">Key features</div>
+            <ul class="case-list">
+              <li>Company &amp; branch setup management</li>
+              <li>Shared master data used across modules</li>
+              <li>Document management and templates</li>
+              <li>Built and maintained as part of the core dev team</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Case 05: HouseHunt -->
+<div class="case" data-case="5">
+  <div class="case-head" onclick="toggleCase(this)">
+    <div class="case-index">05</div>
+    <div class="case-title-group">
+      <div class="case-title">HouseHunt — Property Search App <span class="status-pill">In progress</span></div>
+      <div class="case-tags">
+        <span class="tag">Flutter</span>
+        <span class="tag">Riverpod</span>
+        <span class="tag">Django</span>
+        <span class="tag">SQLite</span>
+      </div>
+    </div>
+    <div class="case-chevron">&#9662;</div>
+  </div>
+  <div class="case-body">
+    <div class="case-body-inner">
+      <div>
+        <div class="case-col-label">What it does</div>
+        <p class="case-text">A property listing and search app for browsing available houses,
+          filtering by location and criteria, and viewing detailed listing information — built as
+          a personal project outside of work.</p>
+        <div class="case-col-label">Stack</div>
+        <p class="case-text">Flutter with Riverpod on the client, a Django REST API backend, and
+          SQLite for data storage.</p>
+      </div>
+      <div>
+        <div class="case-col-label">Highlights</div>
+        <ul class="case-list">
+          <li>Property listing browse and search</li>
+          <li>Filter by location and property criteria</li>
+          <li>Currently in active development</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Case 05: Digital Khata -->
+    <div class="case" data-case="6">
+      <div class="case-head" onclick="toggleCase(this)">
+        <div class="case-index">06</div>
+        <div class="case-title-group">
+          <div class="case-title">Digital Khata — Expense Tracker</div>
+          <div class="case-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Riverpod</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">Google APIs</span>
+          </div>
+        </div>
+        <div class="case-chevron">&#9662;</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div>
+            <div class="case-col-label">What it does</div>
+            <p class="case-text">A personal- and shop-level expense tracker that works offline
+              first, then syncs when connectivity returns. Supports exporting records to Excel and
+              backing up / restoring data, with Google API integration for supporting features.</p>
+            <div class="case-col-label">Stack</div>
+            <p class="case-text">Flutter + Riverpod on the client, a Flask API on the backend, and
+              Oracle for data storage. Version-controlled on GitHub.</p>
+          </div>
+          <div>
+            <div class="case-col-label">Highlights</div>
+            <ul class="case-list">
+              <li>Offline-first architecture with background sync</li>
+              <li>Excel export for record-keeping outside the app</li>
+              <li>Backup &amp; reload flow to prevent data loss</li>
+              <li>Google API integration for supporting features</li>
+            </ul>
+          </div>
+        </div>
+        <div class="arch-diagram-wrap">
+          <div class="case-col-label" style="padding: 0 24px;">How it's wired together</div>
+          <svg viewBox="0 0 720 140" class="arch-diagram" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="var(--text-faint)"></path>
+              </marker>
+            </defs>
+            <rect x="10" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--green)" stroke-width="1.5"></rect>
+            <text x="75" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Flutter</text>
+            <text x="75" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">Riverpod UI</text>
+            <rect x="195" y="10" width="130" height="55" rx="10" fill="var(--bg-card-2)" stroke="var(--line-strong)" stroke-width="1.5"></rect>
+            <text x="260" y="34" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Local DB</text>
+            <text x="260" y="50" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">offline cache</text>
+            <rect x="195" y="80" width="130" height="55" rx="10" fill="var(--bg-card-2)" stroke="var(--amber)" stroke-width="1.5"></rect>
+            <text x="260" y="104" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Sync Engine</text>
+            <text x="260" y="120" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">background job</text>
+            <rect x="380" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--green)" stroke-width="1.5"></rect>
+            <text x="445" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Flask API</text>
+            <text x="445" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">REST endpoints</text>
+            <rect x="565" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--line-strong)" stroke-width="1.5"></rect>
+            <text x="630" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Oracle DB</text>
+            <text x="630" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">persistent store</text>
+            <line x1="140" y1="60" x2="192" y2="38" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
+            <line x1="140" y1="80" x2="192" y2="105" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
+            <line x1="325" y1="108" x2="378" y2="75" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
+            <line x1="510" y1="70" x2="562" y2="70" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 06: To-do App -->
+    <div class="case" data-case="7">
+      <div class="case-head" onclick="toggleCase(this)">
+        <div class="case-index">07</div>
+        <div class="case-title-group">
+          <div class="case-title">To-do List App <span class="status-pill">Personal project</span></div>
+          <div class="case-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Riverpod</span>
+          </div>
+        </div>
+        <div class="case-chevron">&#9662;</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div>
+            <div class="case-col-label">What it does</div>
+            <p class="case-text">A lightweight personal task manager for organizing day-to-day
+              to-dos, built to practice clean state management and UI patterns outside of work
+              projects.</p>
+          </div>
+          <div>
+            <div class="case-col-label">Highlights</div>
+            <ul class="case-list">
+              <li>Simple, fast task creation and tracking</li>
+              <li>Clean card-based UI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="github-repos" id="githubRepos">
+  <div class="case-col-label" style="padding: 0 0 14px;">Recent on GitHub</div>
+  <div class="repo-grid" id="repoGrid">
+    <!-- populated by JS -->
+  </div>
+  <a href="https://github.com/Dipu-111" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 16px;">Visit full profile →</a>
+</div>
+
+  </div>
+</section>  <!--
   <!-- Achievements -->
   <!--
   <section id="achievements" class="section section-alt">
