@@ -158,3 +158,33 @@ if (backToTop) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+
+
+// ---------- Live GitHub repos ----------
+async function loadGithubRepos() {
+  const grid = document.getElementById('repoGrid');
+  if (!grid) return;
+  try {
+    const res = await fetch('https://api.github.com/users/Dipu-111/repos?sort=updated&per_page=6');
+    if (!res.ok) throw new Error('GitHub API error');
+    const repos = await res.json();
+    const filtered = repos.filter(r => !r.fork).slice(0, 3);
+    grid.innerHTML = filtered.map(r => `
+      <div class="repo-card">
+        <div class="repo-top">
+          <span class="repo-name">${r.name}</span>
+          <span class="repo-stars">★ ${r.stargazers_count}</span>
+        </div>
+        <p class="repo-desc">${r.description ? r.description : 'No description provided.'}</p>
+        <div class="repo-meta">
+          ${r.language ? `<span class="tag">${r.language}</span>` : ''}
+          <a href="${r.html_url}" target="_blank" rel="noopener noreferrer">View →</a>
+        </div>
+      </div>
+    `).join('');
+  } catch (err) {
+    grid.innerHTML = '<p class="case-text">Could not load repos right now — visit GitHub directly.</p>';
+  }
+}
+loadGithubRepos();
