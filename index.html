@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dipendra Pandey | Flutter Full-Stack Developer</title>
-  <meta name="description" content="Dipendra Pandey — Flutter Full-Stack Developer building offline-first mobile apps with Flask and Oracle/MySQL." />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dipendra Pandey | Flutter Full-Stack Developer</title>
+<meta name="description" content="Dipendra Pandey: Flutter full-stack developer building mobile apps end-to-end, from Flutter UI to Flask APIs and Oracle databases." />
 
 <!-- Open Graph / social preview -->
 <meta property="og:title" content="Dipendra Pandey | Flutter Full-Stack Developer" />
@@ -13,698 +12,1370 @@
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://www.dipendra-pandey.com.np/preview.png" />
 <meta property="og:url" content="https://www.dipendra-pandey.com.np" />
-
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Dipendra Pandey | Flutter Full-Stack Developer" />
 <meta name="twitter:description" content="Flutter + Flask + Oracle developer building offline-first mobile apps." />
 <meta name="twitter:image" content="https://www.dipendra-pandey.com.np/preview.png" />
+<meta name="theme-color" content="#0b0e16" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e16'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%2357d687'%3EDP%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0b0e16; --bg-alt: #10131e; --bg-card: #171c2c; --bg-card-2: #1e2438;
+    --text: #e7e9ef; --text-dim: #9ca0af; --text-faint: #868ca0;
+    --green: #57d687; --amber: #f2b84b;
+    --line: rgba(255,255,255,.08); --line-strong: rgba(255,255,255,.16);
+    --mono: 'JetBrains Mono', monospace;
+    --accent: var(--green);
+    --pw: 250px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text-dim); line-height: 1.6; overflow-x: hidden; }
+  a { color: inherit; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .eyebrow { font: 13px var(--mono); color: var(--accent); transition: color .5s; }
 
-<link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="Portfolio.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  /* ---------- nav ---------- */
+  .nav { position: fixed; inset: 0 0 auto 0; z-index: 40; background: rgba(11,14,22,.78); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; gap: 24px; height: 60px; }
+  .brand { font-weight: 700; color: var(--text); text-decoration: none; }
+  .nav-links { display: flex; gap: 22px; margin-left: auto; font-size: 14px; }
+  .nav-links a { text-decoration: none; color: var(--text-dim); }
+  .nav-links a:hover { color: var(--text); }
+  .sync { display: flex; align-items: center; gap: 8px; font: 12px var(--mono); color: var(--text-dim);
+    border: 1px solid var(--line-strong); border-radius: 99px; padding: 5px 12px 5px 8px; white-space: nowrap; }
+  .sync svg { width: 18px; height: 18px; transform: rotate(-90deg); }
+  .sync .track { stroke: var(--line-strong); }
+  .sync .prog { stroke: var(--green); stroke-dasharray: 44; stroke-dashoffset: 44; }
+  .sync.done { color: var(--green); border-color: var(--green); }
+
+  /* ---------- buttons ---------- */
+  .btn { display: inline-block; padding: 11px 22px; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none;
+    background: var(--green); color: #0c111d; border: 1px solid var(--green); }
+  .btn.ghost { background: none; color: var(--text); border-color: var(--line-strong); }
+
+  /* ============ STORY: sticky phone + scrolling steps ============ */
+  .story { display: grid; grid-template-columns: 1fr 1.1fr; }
+  .steps { padding-bottom: 20vh; }
+  .step { min-height: 110vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 0;
+    opacity: .22; transition: opacity .5s; }
+  .step.on { opacity: 1; }
+  .step h1 { color: var(--text); font-size: clamp(34px, 5vw, 60px); line-height: 1.08; margin: 10px 0 16px; }
+  .step h1 .hl { color: var(--green); }
+  .step h2 { color: var(--text); font-size: clamp(26px, 3.4vw, 42px); line-height: 1.12; margin: 8px 0 14px; }
+  .step p { max-width: 470px; }
+  .step ul { margin: 14px 0 0 18px; max-width: 470px; }
+  .hero-btns { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+  .stats { display: flex; gap: 34px; margin-top: 32px; }
+  .stats b { display: block; font-size: 26px; color: var(--text); line-height: 1.1; }
+  .stats span { font-size: 13px; }
+  .scroll-cue { font: 12px var(--mono); color: var(--text-faint); margin-top: 40px; }
+  .layer-list { list-style: none; margin-left: 0 !important; display: grid; gap: 10px; }
+  .layer-list li { display: flex; gap: 12px; align-items: baseline; }
+  .layer-list b { font: 500 12px var(--mono); color: var(--accent); min-width: 54px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+  .tag { font: 12px var(--mono); padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line-strong); color: var(--text-dim); }
+  .status { font: 11px var(--mono); padding: 3px 9px; border-radius: 99px; vertical-align: middle; margin-left: 6px;
+    color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+  .team-note { font: 12px var(--mono); color: var(--text-faint); margin-top: 14px; }
+
+  .stage { position: sticky; top: 0; height: 100vh; perspective: 1700px; overflow: visible; }
+  .glow { position: absolute; left: 50%; top: 50%; width: 460px; height: 460px; margin: -230px 0 0 -230px; border-radius: 50%;
+    background: var(--accent); opacity: .14; filter: blur(90px); transition: background-color .6s; pointer-events: none; }
+  .tilt { position: absolute; left: 50%; top: 50%; transform-style: preserve-3d; will-change: transform; }
+  .stack { position: absolute; width: var(--pw); height: calc(var(--pw) * 2.05); margin: calc(var(--pw) * -1.025) 0 0 calc(var(--pw) * -.5);
+    transform-style: preserve-3d; will-change: transform; }
+
+  /* the four layers */
+  .layer { position: absolute; inset: 0; border-radius: calc(var(--pw) * .14); transform-style: preserve-3d; will-change: transform; }
+  .pane { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; padding: 14% 9%;
+    background: rgba(23,28,44,.88); border: 1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);
+    font: calc(var(--pw) * .042) var(--mono); color: var(--text-dim); }
+  .pane-title { font-size: .85em; color: var(--accent); margin-bottom: 1em; letter-spacing: .08em; text-transform: uppercase; }
+  .l-db .pane { border-color: color-mix(in srgb, var(--amber) 60%, transparent); }
+  .l-db .pane-title { color: var(--amber); }
+  .db-row { display: grid; grid-template-columns: 2.4em 1fr 3.6em; gap: .5em; padding: .45em 0; border-bottom: 1px solid var(--line); font-size: .9em; }
+  .db-row.head { color: var(--amber); }
+  .api-line { display: flex; justify-content: space-between; padding: .55em 0; border-bottom: 1px solid var(--line); font-size: .9em; }
+  .api-line i { font-style: normal; color: var(--green); }
+  .wire { position: relative; height: 2px; background: var(--line-strong); margin: 1.4em 0; overflow: hidden; }
+  .pkt { position: absolute; top: -2px; left: -10%; width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+    animation: pkt 2.4s linear infinite; }
+  .pkt:nth-child(2) { animation-delay: .8s; } .pkt:nth-child(3) { animation-delay: 1.6s; }
+  @keyframes pkt { to { transform: translateX(calc(var(--pw) * .9)); } }
+  .state-svg { width: 100%; height: auto; }
+
+  /* layer labels: a flat overlay above the 3D stack, pinned each frame to the projected edge of their layer */
+  .lbls { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+  .lbl { position: absolute; left: 50%; top: 50%; white-space: nowrap; opacity: 0;
+    display: flex; flex-direction: column; padding: 6px 12px; border-left: 2px solid var(--accent);
+    background: rgba(11,14,22,.85); border-radius: 0 8px 8px 0; will-change: transform, opacity; }
+  .lbl::before { content: ''; position: absolute; right: 100%; top: 50%; width: 34px; height: 1px; background: var(--accent); opacity: .7; }
+  .lbl::after { content: ''; position: absolute; right: calc(100% + 31px); top: calc(50% - 3px); width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  .lbl.db { border-color: var(--amber); }
+  .lbl.db::before, .lbl.db::after { background: var(--amber); }
+  .lbl b { font: 500 11px var(--mono); color: var(--accent); letter-spacing: .1em; text-transform: uppercase; }
+  .lbl.db b { color: var(--amber); }
+  .lbl span { color: var(--text); font-weight: 600; font-size: 14px; }
+
+  /* phone (top layer) */
+  .phone-face { position: absolute; inset: 0; border-radius: inherit; background: #05070c; border: 2px solid #2a3148;
+    padding: calc(var(--pw) * .04); box-shadow: 0 30px 60px -20px rgba(0,0,0,.7), inset 0 0 0 1px rgba(255,255,255,.05); }
+  .screen { position: relative; height: 100%; border-radius: calc(var(--pw) * .1); overflow: hidden; background: var(--bg-alt);
+    font-size: calc(var(--pw) * .046); color: var(--text); }
+  .notch { position: absolute; top: 2.5%; left: 50%; width: 32%; height: 3.4%; transform: translateX(-50%); background: #05070c; border-radius: 99px; z-index: 3; }
+  .glare { position: absolute; inset: 0; z-index: 4; pointer-events: none; border-radius: inherit;
+    background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.07) 45%, transparent 55%); background-size: 250% 100%; }
+  .screen-inner { position: absolute; inset: 0; padding: 15% 7% 7%; display: flex; flex-direction: column; gap: .7em; transition: opacity .25s; }
+  .screen-inner.swap { opacity: 0; }
+
+  /* lock screen */
+  .lock { align-items: center; text-align: center; padding-top: 24%; }
+  .lock-time { font-size: 3.2em; font-weight: 300; line-height: 1; letter-spacing: -.02em; }
+  .lock-date { font-size: .8em; color: var(--text-dim); }
+  .lock-name { margin-top: 2.2em; font-weight: 700; font-size: 1.25em; min-height: 1.4em; }
+  .caret { display: inline-block; width: 2px; height: 1em; background: var(--green); vertical-align: -.12em; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .lock-role { font: .75em var(--mono); color: var(--green); }
+  .lock-hint { margin-top: auto; font: .7em var(--mono); color: var(--text-faint); }
+
+  /* mini app UI pieces */
+  .app-h { display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+  .badge { font: .72em var(--mono); padding: .15em .6em; border-radius: 99px; background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); }
+  .card { background: var(--bg-card); border: 1px solid var(--line); border-radius: .8em; padding: .7em .8em; }
+  .muted { color: var(--text-faint); font-size: .78em; }
+  .big { font-size: 1.35em; font-weight: 700; }
+  .row { display: flex; align-items: center; gap: .5em; font-size: .85em; padding: .35em 0; border-bottom: 1px solid var(--line); }
+  .row:last-child { border-bottom: 0; }
+  .row .r { margin-left: auto; font-family: var(--mono); font-size: .9em; color: var(--text-dim); }
+  .dot { width: .55em; height: .55em; border-radius: 50%; background: var(--accent); flex: none; }
+  .dot.a { background: var(--amber); } .dot.f { background: var(--text-faint); }
+  .bar { height: .45em; background: var(--bg-card-2); border-radius: 99px; overflow: hidden; margin-top: .4em; }
+  .bar i { display: block; height: 100%; background: var(--accent); border-radius: 99px; }
+  .cta { margin-top: auto; text-align: center; font-weight: 600; font-size: .85em; padding: .7em; border-radius: .8em;
+    background: color-mix(in srgb, var(--accent) 22%, transparent); color: var(--accent); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: .5em; }
+  .tile { background: var(--bg-card); border: 1px solid var(--line); border-radius: .7em; padding: .7em; font-size: .78em; }
+  .tile b { display: block; font-size: 1.4em; color: var(--accent); }
+  .route { height: 6em; border-radius: .8em; position: relative; overflow: hidden;
+    background: linear-gradient(var(--line) 1px, transparent 1px) 0 0/1.2em 1.2em, linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/1.2em 1.2em, var(--bg-card); }
+  .route svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .stages { display: flex; gap: .35em; }
+  .stages span { flex: 1; text-align: center; font-size: .7em; padding: .4em 0; border-radius: .5em; background: var(--bg-card); border: 1px solid var(--line); }
+  .stages span b { display: block; font-size: 1.4em; color: var(--text); }
+  .stages span.on { border-color: var(--accent); color: var(--accent); }
+  .ring { width: 4.2em; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; font-weight: 700;
+    background: radial-gradient(closest-side, var(--bg-card) 72%, transparent 73%), conic-gradient(var(--accent) var(--p), var(--bg-card-2) 0); }
+  .search { background: var(--bg-card); border: 1px solid var(--line); border-radius: 99px; padding: .5em .9em; font-size: .8em; color: var(--text-faint); }
+  .house { border-radius: .8em; overflow: hidden; background: var(--bg-card); border: 1px solid var(--line); }
+  .house .img { height: 5em; background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 55%, #1e2438), #1e2438); }
+  .house .meta { padding: .5em .7em; font-size: .8em; display: flex; justify-content: space-between; }
+  .chk { width: 1em; height: 1em; border-radius: .3em; border: 1.5px solid var(--line-strong); flex: none; display: grid; place-items: center; font-size: .7em; }
+  .chk.on { background: var(--accent); border-color: var(--accent); color: #0c111d; }
+  .done { text-decoration: line-through; color: var(--text-faint); }
+
+  /* ---------- real app screens, rebuilt from the Flutter code (light theme like the apps) ---------- */
+  .app { position: absolute; inset: 0; display: flex; flex-direction: column; background: #F5F7FB; color: #1D2838; overflow: hidden; }
+  .app svg.i { width: 1.3em; height: 1.3em; fill: currentColor; flex: none; }
+  :where(.app) button { font: inherit; }
+  .sbar { height: 4.4em; flex: none; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 10% .25em; font-size: .7em; font-weight: 600; }
+  .abar { flex: none; display: flex; align-items: center; gap: .6em; padding: .45em .9em; font-weight: 600; font-size: .95em; }
+  .abar .sp, .sp { flex: 1; }
+  .abody { flex: 1; min-height: 0; overflow: hidden; padding: .2em .75em .5em; display: flex; flex-direction: column; gap: .5em; }
+  .bnav { flex: none; display: flex; justify-content: space-around; padding: .4em 0 .8em; font-size: .62em; margin-top: auto; }
+  .bnav button { display: flex; flex-direction: column; align-items: center; gap: .1em; background: none; border: 0; color: inherit; font-size: 1em; cursor: pointer; opacity: .55; }
+  .bnav button.on { opacity: 1; }
+  .bnav.dark { background: rgb(69,69,69); color: rgb(202,202,202); }
+  .bnav.white { background: #fff; color: #155CFB; border-top: 1px solid #E5E7EB; }
+  .tap { cursor: pointer; transition: transform .12s; }
+  .tap:active, .app button:active { transform: scale(.96); }
+  .scrim { position: absolute; inset: 0; background: rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 4; }
+  .scrim.open { opacity: 1; pointer-events: auto; }
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; background: #fff; border-radius: 1.2em 1.2em 0 0; padding: .9em .9em 1.4em; z-index: 5;
+    box-shadow: 0 -10px 30px rgba(0,0,0,.25); transform: translateY(105%); transition: transform .3s cubic-bezier(.2,.8,.2,1); color: #1D2838; font-size: .85em; }
+  .sheet.open { transform: none; }
+  .sheet h4 { font-size: 1em; margin-bottom: .6em; }
+  .sheet .close { display: block; margin: .8em auto 0; border: 0; background: #155DFC; color: #fff; border-radius: .6em; padding: .4em 1.4em; cursor: pointer; font-size: .9em; }
+  .toast-in { position: absolute; left: 8%; right: 8%; bottom: 13%; background: #323232; color: #fff; font-size: .7em; padding: .6em .8em; border-radius: .5em;
+    opacity: 0; transform: translateY(10px); transition: .25s; z-index: 6; pointer-events: none; }
+  .toast-in.show { opacity: 1; transform: none; }
+  .seg { display: flex; background: #fff; border: 1px solid #E5E7EB; border-radius: .6em; padding: .15em; font-size: .72em; flex: none; }
+  .seg button { flex: 1; border: 0; background: none; padding: .3em; border-radius: .45em; cursor: pointer; color: #64748B; font-weight: 500; }
+  .seg button.on { background: #155DFC; color: #fff; }
+  .tbl { background: #fff; border-radius: .7em; overflow: hidden; font-size: .64em; box-shadow: 0 2px 8px rgba(0,0,0,.06); flex: none; }
+  .tbl .tr { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: .4em .6em; border-bottom: 1px solid #F1F5F9; }
+  .tbl.c3 .tr { grid-template-columns: 2fr 1fr 1fr; }
+  .tbl .th { background: #EFF6FF; font-weight: 600; color: #155DFC; }
+
+  /* SFA */
+  .attend { background: linear-gradient(135deg, #2196F3, #155DFC); color: #fff; border-radius: 1em; padding: .6em .75em; flex: none; }
+  .attend .t { display: flex; align-items: center; gap: .4em; font-weight: 600; font-size: .85em; }
+  .attend .t small { font-weight: 400; opacity: .85; font-size: .8em; }
+  .attend .cols { display: grid; grid-template-columns: 1fr 1fr; gap: .5em; margin-top: .4em; font-size: .7em; }
+  .attend .cols b { display: block; font-size: 1.35em; }
+  .attend .cols small { opacity: .8; }
+  .attend button { margin-top: .45em; width: 100%; border: 0; border-radius: .6em; padding: .4em; background: rgba(255,255,255,.22); color: #fff; font-weight: 600; font-size: .72em; cursor: pointer; }
+  .card-w { background: #FCFCFC; border-radius: 1em; padding: .6em .75em; box-shadow: 0 2px 8px rgba(0,0,0,.08); flex: none; }
+  .card-w .ct { display: flex; align-items: center; gap: .4em; font-weight: 600; font-size: .8em; }
+  .legend { display: flex; gap: .8em; font-size: .62em; color: #64748B; margin-top: .25em; }
+  .legend i { display: inline-block; width: .7em; height: .7em; border-radius: .2em; margin-right: .3em; vertical-align: -.05em; }
+  .bars { display: flex; align-items: flex-end; justify-content: space-around; height: 3.8em; margin-top: .35em; border-bottom: 1px solid #E2E8F0; }
+  .bars .g { display: flex; gap: .15em; align-items: flex-end; height: 100%; }
+  .bars span { width: .55em; border-radius: .2em .2em 0 0; transition: height .45s cubic-bezier(.2,.8,.2,1); }
+  .bar-lbl { display: flex; justify-content: space-around; font-size: .56em; color: #64748B; margin-top: .2em; }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: .4em; flex: none; }
+  .kpi { background: linear-gradient(135deg, #2196F3, #155DFC); color: #fff; border-radius: .8em; padding: .45em .6em; font-size: .66em; }
+  .kpi b { display: block; font-size: 1.55em; line-height: 1.2; }
+  .kpi small { opacity: .85; }
+
+  /* CRM */
+  .crm .hdr { background: linear-gradient(#1565C0, #fff); padding-bottom: 4.6em; color: rgba(255,255,255,.75); flex: none; }
+  .crm .user { display: flex; align-items: center; gap: .4em; padding: .3em 1em 0; font-size: .72em; }
+  .crm .av { width: 1.9em; height: 1.9em; border-radius: 50%; background: #CFD8DC; color: #7e7e7e; display: grid; place-items: center; font-weight: 700; }
+  .crm .abar { font-weight: 400; }
+  .crm .range { font-size: .55em; color: rgba(34,34,34,.6); padding-left: 3.4em; }
+  .chip-d { font-size: .6em; background: rgba(255,255,255,.25); padding: .2em .5em; border-radius: 99px; }
+  .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: .4em; margin: -4.4em .6em 0; position: relative; flex: none; }
+  .metric { border-radius: .6em; padding: .4em .55em; color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.15); cursor: pointer; border: 0; text-align: left;
+    outline: 2px solid transparent; outline-offset: 1px; transition: outline-color .2s, transform .12s; }
+  .metric.on { outline-color: #1D2838; }
+  .metric .n { font-size: 1.3em; font-weight: 600; line-height: 1.1; display: flex; justify-content: space-between; align-items: center; }
+  .metric .n svg { width: .85em; height: .85em; }
+  .metric small { font-size: .62em; color: #37474F; display: flex; justify-content: space-between; }
+  .metric .pb { height: .28em; background: #D1C4E9; border-radius: 99px; margin-top: .3em; overflow: hidden; }
+  .metric .pb i { display: block; height: 100%; }
+  .todo { margin: .6em .6em 0; height: 2.4em; border-radius: 99px; background: linear-gradient(90deg, #F4F4F6, #DBE0EF); flex: none;
+    box-shadow: 0 4px 8px rgba(33,150,243,.3); display: flex; align-items: center; justify-content: space-between; padding: 0 1em; }
+  .todo b { font-size: 1em; color: #1D2838; }
+  .todo span { font-size: .68em; color: #155DFC; font-weight: 500; }
+  .sec-t { font-size: .7em; color: #525252; font-weight: 600; display: flex; justify-content: space-between; padding: .55em .8em .15em; flex: none; }
+  .sec-t a { color: #2196F3; text-decoration: underline; font-weight: 400; }
+  .lead { display: flex; gap: .5em; align-items: center; background: #fff; margin: .3em .6em; padding: .45em .55em; border-radius: .7em; box-shadow: 0 1px 4px rgba(0,0,0,.08); font-size: .64em; flex: none; animation: pop .25s ease-out; }
+  .lead .la { width: 2.2em; height: 2.2em; border-radius: 50%; color: #fff; display: grid; place-items: center; font-weight: 700; flex: none; }
+  .lead .lt { flex: 1; min-width: 0; line-height: 1.35; }
+  .lead .lt b { display: block; font-size: 1.08em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lead .lt span { color: #9E9E9E; }
+  .pct { width: 2.7em; height: 2.7em; border-radius: 50%; flex: none; display: grid; place-items: center; font-size: .85em; font-weight: 600;
+    background: radial-gradient(closest-side, #fff 76%, transparent 78%), conic-gradient(#4CAF50 var(--p), #D1C4E9 0); }
+  .fab { position: absolute; right: .8em; bottom: 3.6em; background: #4CAF50; color: #fff; border: 0; border-radius: 1em; padding: .55em .85em; font-weight: 600; font-size: .72em;
+    display: flex; align-items: center; gap: .3em; box-shadow: 0 4px 10px rgba(0,0,0,.3); cursor: pointer; z-index: 3; }
+
+  /* ESS */
+  .ess .abar { justify-content: center; background: #fff; letter-spacing: .04em; }
+  .ess .seg { background: #F3F4F6; border: 0; border-radius: .8em; }
+  .ess .seg button.on { background: #fff; color: #0A0A0A; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+  .att { background: linear-gradient(135deg, #10B981, #059669); color: #fff; border-radius: 1em; padding: .6em .75em; flex: none; }
+  .att .t { display: flex; align-items: center; gap: .4em; font-weight: 600; font-size: .8em; }
+  .att .t small { font-weight: 400; opacity: .85; font-size: .85em; }
+  .att .clock { font-size: 1.6em; font-weight: 600; margin-top: .1em; line-height: 1.2; }
+  .att > small { opacity: .9; font-size: .64em; }
+  .att .btns { display: grid; grid-template-columns: 1fr 1fr; gap: .4em; margin-top: .45em; }
+  .att button { border: 0; border-radius: .6em; padding: .4em; background: #fff; color: #059669; font-weight: 600; font-size: .7em; cursor: pointer; }
+  .att button.ghost { background: rgba(255,255,255,.22); color: #fff; }
+  .att button:disabled { opacity: .45; cursor: default; }
+  .mini3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: .35em; flex: none; }
+  .mini3 div { border-radius: .7em; padding: .35em .5em; font-size: .56em; color: #495565; }
+  .mini3 b { display: block; font-size: 1.6em; }
+  .chips8 { display: grid; grid-template-columns: repeat(4, 1fr); gap: .3em .2em; background: #fff; border-radius: .8em; padding: .45em .3em; box-shadow: 0 1px 4px rgba(0,0,0,.08); flex: none; }
+  .chips8 div { text-align: center; font-size: .5em; color: #495565; line-height: 1.15; white-space: pre-line; }
+  .chips8 i { display: grid; place-items: center; width: 2.3em; height: 2.3em; margin: 0 auto .2em; border-radius: 50%; color: #fff; font-style: normal; font-weight: 700; font-size: 1.2em; }
+  .qa-t { font-weight: 600; font-size: .75em; color: #0A0A0A; flex: none; }
+  .qa { display: grid; grid-template-columns: repeat(4, 1fr); gap: .35em; flex: none; }
+  .qa button { border: 0; border-radius: .9em; padding: .5em .15em; display: flex; flex-direction: column; align-items: center; gap: .25em; font-size: .5em;
+    line-height: 1.15; color: #0A0A0A; cursor: pointer; white-space: pre-line; }
+  .qa button svg.i { width: 2.2em; height: 2.2em; }
+  .act2 { display: grid; grid-template-columns: 1fr 1fr; gap: .5em; }
+  .act2 button { border: 0; border-radius: .9em; padding: .8em .4em; display: flex; flex-direction: column; align-items: center; gap: .3em; cursor: pointer; font-size: .85em; white-space: pre-line; }
+  .task { display: flex; gap: .5em; align-items: center; padding: .45em 0; border-bottom: 1px solid #EEE; cursor: pointer; }
+  .task i { width: 1.1em; height: 1.1em; border-radius: .3em; border: 1.5px solid #CBD5E1; display: grid; place-items: center; font-style: normal; font-size: .75em; flex: none; }
+  .task.done i { background: #155CFB; border-color: #155CFB; color: #fff; }
+  .task.done span { text-decoration: line-through; color: #94A3B8; }
+
+  /* PB Smart */
+  .pbs .top { background: #2196F3; color: #fff; flex: none; }
+  .pbs .mq { font-size: .62em; opacity: .9; padding: 0 1.3em .3em; }
+  .tabs { display: flex; overflow: hidden; font-size: .54em; padding: 0 .3em; }
+  .tabs button { flex: 1; display: flex; flex-direction: column; align-items: center; gap: .2em; padding: .5em .1em; border: 0; background: none; color: rgba(255,255,255,.8); cursor: pointer; border-radius: .5em .5em 0 0; }
+  .tabs button.on { background: #90CAF9; color: #fff; }
+  .tabs button svg.i { width: 1.7em; height: 1.7em; }
+  .pbs .abody { padding-top: .6em; }
+  .pt { font-size: .74em; font-weight: 600; color: #0D47A1; }
+  .gauges { display: flex; justify-content: space-around; margin-top: .3em; }
+  .gauge { text-align: center; font-size: .6em; color: #64748B; }
+  .gauge .g { width: 5em; height: 2.5em; border-radius: 5em 5em 0 0; margin: 0 auto .25em; position: relative; overflow: hidden;
+    background: conic-gradient(from 270deg at 50% 100%, var(--c) calc(var(--p) * .5), #E2E8F0 0 50%, transparent 0); }
+  .gauge .g::after { content: ''; position: absolute; left: 20%; right: 20%; bottom: 0; top: 40%; background: #FCFCFC; border-radius: 3em 3em 0 0; }
+  .gauge b { display: block; color: #1D2838; font-size: 1.25em; }
+  .qi { display: grid; grid-template-columns: 1fr 1fr; gap: .4em; flex: none; }
+  .qi button { background: #fff; border: 0; border-radius: .35em; box-shadow: 0 1px 4px rgba(0,0,0,.1); padding: .5em .55em; text-align: left; font-size: .62em; cursor: pointer; color: #1D2838; }
+  .qi button b { display: block; color: #1565C0; font-size: 1.05em; margin-bottom: .1em; }
+  .qi small { color: #64748B; }
+  .xt { border-radius: .5em; overflow: hidden; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.1); font-size: .64em; flex: none; }
+  .xt .xh { background: rgba(50,120,200,.9); color: #fff; padding: .55em .7em; display: flex; justify-content: space-between; font-weight: 600; cursor: pointer; }
+  .xt .xb { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+  .xt.open .xb { max-height: 16em; }
+  .xt .r2 { display: flex; justify-content: space-between; padding: .38em .7em; border-bottom: 1px solid #F1F5F9; }
+  .xt .neg { color: #E57373; } .xt .pos { color: #66BB6A; }
+  .rlist button { display: block; width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid #EEE; padding: .5em 0; font-size: .95em; cursor: pointer; color: #1D2838; }
+  .mchart { display: flex; align-items: flex-end; gap: .3em; height: 4.6em; margin-top: .4em; }
+  .mchart span { flex: 1; background: #2196F3; border-radius: .2em .2em 0 0; }
+  .mchart span:nth-child(even) { background: #90CAF9; }
+
+  .tap-hint { position: absolute; left: 0; right: 0; bottom: 6%; text-align: center; font: 12px var(--mono); color: var(--text-faint); pointer-events: none; opacity: 0; }
+
+  /* ERP satellites */
+  .sat { position: absolute; left: 50%; top: 50%; width: 92px; height: 150px; margin: -75px 0 0 -46px; border-radius: 18px;
+    background: #05070c; border: 1.5px solid var(--sat); padding: 8px; opacity: 0; will-change: transform, opacity; pointer-events: none; }
+  .sat div { height: 100%; border-radius: 12px; background: var(--bg-alt); display: flex; flex-direction: column; justify-content: center;
+    align-items: center; gap: 6px; font: 600 13px 'Poppins'; color: var(--text); }
+  .sat div::before { content: ''; width: 26px; height: 26px; border-radius: 8px; background: var(--sat); opacity: .85; }
+
+  /* ============ ABOUT: bento ============ */
+  .section { padding: 110px 0; }
+  .section-head { margin-bottom: 34px; }
+  .section-head h2 { color: var(--text); font-size: clamp(28px, 3.6vw, 42px); line-height: 1.1; margin-top: 6px; }
+  .bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(150px, auto); gap: 14px; }
+  .b { background: var(--bg-card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; position: relative; overflow: hidden;
+    opacity: 0; transform: translateY(24px) scale(.98); transition: opacity .6s, transform .6s cubic-bezier(.2,.7,.2,1); }
+  .b.in { opacity: 1; transform: none; }
+  .b h3 { color: var(--text); font-size: 15px; margin-bottom: 10px; }
+  .b-photo { grid-row: span 2; padding: 0; background: var(--bg-card-2); min-height: 320px; }
+  .b-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .b-photo .cap { position: absolute; inset: auto 0 0 0; padding: 18px 20px; background: linear-gradient(transparent, rgba(5,7,12,.9)); }
+  .b-photo .cap b { color: var(--text); display: block; }
+  .b-photo .cap span { font: 12px var(--mono); color: var(--green); }
+  .b-wide { grid-column: span 2; }
+  .b-num { font-size: 46px; font-weight: 700; color: var(--text); line-height: 1; }
+  .b-num + span { font-size: 14px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips span { font: 12px var(--mono); padding: 4px 10px; border-radius: 99px; background: var(--bg-card-2); color: var(--text-dim); }
+  .b-offline .pulse { width: 10px; height: 10px; border-radius: 50%; background: var(--green); display: inline-block; margin-right: 8px;
+    box-shadow: 0 0 0 0 rgba(87,214,135,.6); animation: pulse 2s infinite; }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(87,214,135,0); } 100% { box-shadow: 0 0 0 0 rgba(87,214,135,0); } }
+  .ticker { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+  .ticker-track { display: flex; gap: 10px; width: max-content; animation: tick 22s linear infinite; }
+  .ticker-track span { font: 13px var(--mono); padding: 6px 14px; border-radius: 99px; border: 1px solid var(--line-strong); color: var(--text); white-space: nowrap; }
+  @keyframes tick { to { transform: translateX(-50%); } }
+
+  /* ============ CONTACT: chat app ============ */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .contact-links { margin-top: 22px; display: grid; gap: 8px; font-size: 15px; }
+  .contact-links a { text-decoration: none; color: var(--text); }
+  .contact-links a:hover { color: var(--green); }
+  .contact-links b { font: 500 12px var(--mono); color: var(--text-faint); display: inline-block; width: 80px; }
+  .chat-phone { --pw: 300px; width: var(--pw); height: calc(var(--pw) * 2.05); margin: 0 auto; position: relative; border-radius: calc(var(--pw) * .14);
+    transform: perspective(1400px) rotateY(-10deg) rotateX(4deg); }
+  .chat { position: absolute; inset: 0; padding: 13% 0 0; display: flex; flex-direction: column; font-size: 14px; }
+  .chat-head { display: flex; align-items: center; gap: 10px; padding: 0 16px 12px; border-bottom: 1px solid var(--line); }
+  .chat-head .av { width: 34px; height: 34px; border-radius: 50%; background: var(--green); color: #0c111d; display: grid; place-items: center; font-weight: 700; font-size: 13px; }
+  .chat-head b { display: block; font-size: 14px; line-height: 1.2; }
+  .chat-head small { font: 11px var(--mono); color: var(--green); }
+  .msgs { flex: 1; overflow-y: auto; padding: 14px 14px 6px; display: flex; flex-direction: column; gap: 8px; scrollbar-width: none; }
+  .msg { max-width: 82%; padding: 8px 12px; border-radius: 16px; line-height: 1.4; font-size: 13px; animation: pop .25s ease-out; }
+  .msg.them { background: var(--bg-card-2); color: var(--text); border-bottom-left-radius: 4px; align-self: flex-start; }
+  .msg.me { background: var(--green); color: #0c111d; border-bottom-right-radius: 4px; align-self: flex-end; }
+  .msg-status { align-self: flex-end; font: 10px var(--mono); color: var(--text-faint); margin-top: -4px; }
+  .typing { display: flex; gap: 4px; }
+  .typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--text-faint); animation: bounce 1s infinite; }
+  .typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+  @keyframes bounce { 50% { transform: translateY(-4px); } }
+  @keyframes pop { from { transform: scale(.9); opacity: 0; } }
+  .composer { display: flex; gap: 8px; padding: 10px 12px 16px; border-top: 1px solid var(--line); }
+  .composer input { flex: 1; min-width: 0; background: var(--bg-card); border: 1px solid var(--line-strong); border-radius: 99px; padding: 9px 14px;
+    color: var(--text); font: 13px 'Poppins'; outline: none; }
+  .composer input:focus { border-color: var(--green); }
+  .composer button { width: 38px; height: 38px; border-radius: 50%; border: 0; background: var(--green); color: #0c111d; font-size: 16px; cursor: pointer; flex: none; }
+  .composer button:disabled { opacity: .4; cursor: default; }
+
+  /* ---------- notification toast ---------- */
+  .toast { position: fixed; top: 72px; right: 20px; z-index: 60; width: 330px; max-width: calc(100vw - 32px); display: flex; gap: 12px;
+    padding: 12px 14px; border-radius: 18px; background: rgba(30,36,56,.92); backdrop-filter: blur(14px); border: 1px solid var(--line-strong);
+    box-shadow: 0 20px 40px -12px rgba(0,0,0,.6); transform: translateY(calc(-100% - 100px)); transition: transform .5s cubic-bezier(.2,.9,.25,1.2); cursor: pointer; }
+  .toast.show { transform: none; }
+  .toast .av { width: 38px; height: 38px; border-radius: 10px; background: var(--green); color: #0c111d; display: grid; place-items: center; font-weight: 700; flex: none; }
+  .toast b { color: var(--text); font-size: 13px; }
+  .toast small { font: 11px var(--mono); color: var(--text-faint); margin-left: 6px; }
+  .toast p { font-size: 13px; line-height: 1.4; }
+  .toast .x { position: absolute; top: 6px; right: 10px; background: none; border: 0; color: var(--text-faint); font-size: 16px; cursor: pointer; }
+
+  footer { border-top: 1px solid var(--line); padding: 26px 0; font-size: 13px; }
+  footer .container { display: flex; justify-content: space-between; }
+  .fps { position: fixed; bottom: 12px; left: 12px; z-index: 70; font: 12px var(--mono); color: var(--green); background: rgba(0,0,0,.6); padding: 4px 8px; border-radius: 6px; display: none; }
+
+  /* ---------- mobile ---------- */
+  @media (max-width: 900px) {
+    :root { --pw: 128px; }
+    .nav-links { display: none; }
+    .sync { margin-left: auto; }
+    .story { grid-template-columns: 1fr; }
+    .stage { order: -1; top: 60px; height: 52vh; z-index: 2; overflow: hidden; background: linear-gradient(var(--bg) 82%, transparent); }
+    .glow { width: 260px; height: 260px; margin: -130px 0 0 -130px; }
+    .lbl { padding: 3px 8px; }
+    .lbl::before { width: 18px; } .lbl::after { right: calc(100% + 15px); }
+    .lbl b { font-size: 9px; } .lbl span { font-size: 11px; }
+    .step { min-height: 75vh; padding: 30px 0; }
+    .steps { padding-bottom: 10vh; }
+    .bento { grid-template-columns: 1fr 1fr; }
+    .b-photo { grid-column: span 2; grid-row: auto; min-height: 280px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .chat-phone { --pw: 270px; transform: none; }
+    .sat { width: 64px; height: 104px; margin: -52px 0 0 -32px; border-radius: 14px; padding: 5px; }
+    .sat div { font-size: 10px; } .sat div::before { width: 18px; height: 18px; }
+  }
+  @media (max-width: 520px) { .bento { grid-template-columns: 1fr; } .b-wide, .b-photo { grid-column: auto; } }
+  @media (prefers-reduced-motion: reduce) {
+    .pkt, .ticker-track, .caret, .pulse { animation: none !important; }
+    .b { transition: none; }
+  }
+</style>
 </head>
-
 <body>
 
-  <!-- Navigation -->
-  <header class="navbar" id="navbar">
-    <div class="container nav-container">
-      <div class="brand">DP</div>
-      <nav class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <!-- <a href="#activity">Activity</a> -->
-        <!-- <a href="#achievements">Achievements</a> -->
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="menu-toggle" id="menuToggle">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand">DP</a>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="sync" id="sync" title="Scroll progress">
+      <svg viewBox="0 0 18 18"><circle class="track" cx="9" cy="9" r="7" fill="none" stroke-width="2.4"/><circle class="prog" id="syncRing" cx="9" cy="9" r="7" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span id="syncText">Offline</span>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-container">
-      <div class="hero-text">
-        <div class="eyebrow">Flutter Full-Stack Developer · 1+ yr professional · 2+ yr Flutter</div>
-        <h1>Hi, I'm <span class="highlight">Dipendra Pandey</span></h1>
-        <p>I build mobile apps end-to-end — Flutter on the front, Flask APIs and Oracle/MySQL on the
-          back — with a focus on offline-first, real-world reliability.</p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn">Contact Me</a>
-          <a href="Dipendra_Pandey_CV.pdf" class="btn btn-secondary" download>Download CV</a>
-        </div>
-        <div class="hero-meta">
-          <div class="meta-item">
-            <span class="meta-num">2+</span>
-            <span class="meta-label">years Flutter</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-num">1+</span>
-            <span class="meta-label">yr professional</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-num">Full</span>
-            <span class="meta-label">stack: app to DB</span>
-          </div>
-        </div>
-      </div>
+<!-- ============ STORY ============ -->
+<main id="top" class="container">
+  <section class="story" id="story">
+    <div class="steps" id="steps">
 
-      <div class="phone-col">
-        <div class="phone-stage" id="phoneStage">
-          <div class="phone-glow"></div>
-          <div class="orbit-icon oi-1">🎯</div>
-          <div class="orbit-icon oi-2">🐦</div>
-          <div class="orbit-icon oi-3">🐍</div>
-          <div class="orbit-icon oi-4">🗄️</div>
-          <div id="phone">
-            <div class="phone-back"></div>
-            <div class="phone-edge-l"></div>
-            <div class="phone-edge-r"></div>
+      <!-- Scene 1: arrival -->
+      <article class="step on" data-kind="intro">
+        <div class="eyebrow">Flutter Full-Stack Developer · Nepal</div>
+        <h1>Hi, I'm <span class="hl">Dipendra Pandey</span>.</h1>
+        <p>I build mobile apps end-to-end: Flutter on the front, Flask APIs and Oracle/MySQL on the back, built to keep working offline.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn">Say hi</a>
+          <a href="Dipendra_Pandey_CV.pdf" class="btn ghost" download>Download CV</a>
+        </div>
+        <div class="stats">
+          <div><b>2+</b><span>years Flutter</span></div>
+          <div><b>1+</b><span>year professional</span></div>
+          <div><b>7</b><span>apps built</span></div>
+        </div>
+        <div class="scroll-cue">scroll to unlock ↓</div>
+      </article>
+
+      <!-- Scene 2: the explode -->
+      <article class="step" data-kind="stack">
+        <div class="eyebrow">// what's inside an app</div>
+        <h2>Every app is four layers deep.</h2>
+        <p>Most developers own one of them. I build all four, from the pixels in Flutter down to the rows in Oracle.</p>
+        <ul class="layer-list">
+          <li><b>UI</b>Flutter &amp; Dart: screens, animations, offline-first UX</li>
+          <li><b>STATE</b>Riverpod (also GetX &amp; Provider) keeping data in sync</li>
+          <li><b>API</b>Flask REST endpoints I design and ship myself</li>
+          <li><b>DATA</b>Oracle and MySQL schemas, queries and sync</li>
+        </ul>
+      </article>
+
+      <div id="work"></div>
+      <!-- Scenes 3–4: project steps injected by JS -->
+    </div>
+
+    <div class="stage" id="stage">
+      <div class="glow"></div>
+      <div class="tap-hint" id="tapHint">👆 tap the phone, the screens work</div>
+      <div class="sat" data-s="0" style="--sat:#57d687"><div>SFA</div></div>
+      <div class="sat" data-s="1" style="--sat:#6aa8ff"><div>CRM</div></div>
+      <div class="sat" data-s="2" style="--sat:#f2b84b"><div>ESS</div></div>
+      <div class="tilt" id="tilt">
+        <div class="stack" id="stack">
+          <div class="layer l-db">
+            <div class="pane">
+              <div class="pane-title">Oracle · <span data-f="table">visits</span></div>
+              <div class="db-row head"><span>ID</span><span>NAME</span><span>AMT</span></div>
+              <div class="db-row"><span>101</span><span>Shrestha Tr.</span><span>4,200</span></div>
+              <div class="db-row"><span>102</span><span>New Road M.</span><span>1,850</span></div>
+              <div class="db-row"><span>103</span><span>Himal Store</span><span>960</span></div>
+              <div class="db-row"><span>104</span><span>Bagmati Ph.</span><span>7,300</span></div>
+              <div class="db-row"><span>105</span><span>Lumbini Ag.</span><span>2,140</span></div>
+            </div>
+          </div>
+          <div class="layer l-api">
+            <div class="pane">
+              <div class="pane-title">REST API</div>
+              <div data-f="api"></div>
+              <div class="wire"><i class="pkt"></i><i class="pkt"></i><i class="pkt"></i></div>
+              <div class="wire"><i class="pkt" style="animation-delay:.4s"></i><i class="pkt" style="animation-delay:1.2s"></i></div>
+            </div>
+          </div>
+          <div class="layer l-state">
+            <div class="pane">
+              <div class="pane-title">State graph</div>
+              <svg class="state-svg" viewBox="0 0 200 240" fill="none">
+                <g stroke="var(--accent)" stroke-opacity=".5" stroke-width="1.4">
+                  <line x1="100" y1="30" x2="45" y2="100"/><line x1="100" y1="30" x2="155" y2="100"/>
+                  <line x1="45" y1="100" x2="60" y2="180"/><line x1="155" y1="100" x2="140" y2="180"/>
+                  <line x1="45" y1="100" x2="140" y2="180"/>
+                </g>
+                <g fill="var(--bg-card-2)" stroke="var(--accent)" stroke-width="1.6">
+                  <circle cx="100" cy="30" r="13"/><circle cx="45" cy="100" r="11"/><circle cx="155" cy="100" r="11"/>
+                  <circle cx="60" cy="180" r="9"/><circle cx="140" cy="180" r="9"/>
+                </g>
+                <g fill="#9ca0af" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">
+                  <text x="100" y="58">appState</text><text x="45" y="126">repo</text><text x="155" y="126">sync</text>
+                  <text x="60" y="204">cache</text><text x="140" y="204">ui</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="layer l-ui">
             <div class="phone-face">
-              <div class="notch-bar"></div>
-
-              <!-- Screen 0: Dashboard -->
-              <div class="screen active" data-screen="0">
-                <div class="ph-profile">
-                  <div class="ph-avatar">DP</div>
-                  <div>
-                    <div class="ph-name">Dipendra Pandey</div>
-                    <div class="ph-role">Flutter Full-Stack Dev</div>
-                  </div>
-                </div>
-                <div class="ph-stat-grid">
-                  <div class="ph-stat"><span>2+</span>yr Flutter</div>
-                  <div class="ph-stat"><span>1+</span>yr pro</div>
-                  <div class="ph-stat"><span>2</span>projects</div>
-                  <div class="ph-stat"><span>Full</span>stack</div>
-                </div>
-                <div class="ph-label">core stack</div>
-                <div class="ph-chip-row">
-                  <span>Riverpod</span><span>Flask</span><span>Oracle</span><span>GitHub</span>
-                </div>
-                <div class="ph-cta">View full profile →</div>
+              <div class="screen">
+                <div class="notch"></div>
+                <div class="glare" id="glare"></div>
+                <div class="screen-inner" id="screen"></div>
               </div>
-
-              <!-- Screen 1: Digital Khata app -->
-              <div class="screen" data-screen="1">
-                <div class="ph-app-header">
-                  <span>Digital Khata</span>
-                  <span class="ph-badge">offline</span>
-                </div>
-                <div class="ph-balance-card">
-                  <div class="ph-balance-label">This month</div>
-                  <div class="ph-balance-num">— Rs —</div>
-                </div>
-                <div class="ph-tx-row"><span class="ph-dot green"></span>Shop expense <span class="ph-tx-amt">− —</span></div>
-                <div class="ph-tx-row"><span class="ph-dot amber"></span>Personal <span class="ph-tx-amt">− —</span></div>
-                <div class="ph-tx-row"><span class="ph-dot green"></span>Backup synced <span class="ph-tx-amt">✓</span></div>
-                <div class="ph-cta">Export to Excel ↧</div>
-              </div>
-
-              <!-- Screen 2: Coming soon -->
-              <div class="screen" data-screen="2">
-                <div class="ph-app-header">
-                  <span>Industry App</span>
-                  <span class="ph-badge amber">planning</span>
-                </div>
-                <div class="ph-coming">
-                  <div class="ph-coming-icon">🚧</div>
-                  <div class="ph-coming-text">Architecture &amp; planning stage — details coming soon.</div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="phone-tabs" id="phoneTabs">
-          <div class="phone-tab active" data-idx="0" title="Dashboard"></div>
-          <div class="phone-tab" data-idx="1" title="Digital Khata"></div>
-          <div class="phone-tab" data-idx="2" title="Industry App"></div>
-        </div>
-        <div class="drag-hint">&#8596; drag phone to rotate · tap dots to switch screens</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="section-eyebrow">get to know me</div>
-          <h2>About Me</h2>
-        </div>
-      </div>
-      <div class="about-grid">
-        <p class="about-text">
-          I'm a Flutter full-stack developer with over two years of Flutter experience and about a year
-          working professionally across the full stack — building the app, the API, and the database
-          behind it. I mainly reach for Riverpod for state management, but I'm equally comfortable
-          with GetX and Provider depending on the project. On the backend I build my own APIs with
-          Flask, backed by Oracle (my main database) and MySQL. I'm currently in my final year of
-          B.Sc. CSIT (8th semester) at Tribhuvan University, balancing coursework with real
-          professional projects.
-        </p>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div>
-              <div class="timeline-title">Flutter Full-Stack Developer</div>
-              <div class="timeline-sub">~1 year professional experience</div>
-              <p class="timeline-text">Building mobile apps end-to-end: Flutter front-end, Flask REST
-                APIs, and Oracle/MySQL data layers.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div>
-              <div class="timeline-title">B.Sc. CSIT</div>
-              <div class="timeline-sub">Tribhuvan University · 8th semester (final year)</div>
-              <p class="timeline-text">Coursework in data structures, databases, and software
-                engineering, alongside shipped Flutter projects.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="now-strip">
-        <div class="now-label">// currently learning</div>
-        <div class="chip-row">
-          <span class="chip">System design basics</span>
-          <span class="chip">Advanced Flutter animations</span>
-          <span class="chip">Clean architecture at scale</span>
-        </div>
-       
+      <div class="lbls">
+        <div class="lbl db"><b>Data</b><span data-f="data">Oracle · MySQL</span></div>
+        <div class="lbl"><b>API</b><span data-f="apiName">Flask REST</span></div>
+        <div class="lbl"><b>State</b><span data-f="state">Riverpod</span></div>
+        <div class="lbl"><b>UI</b><span data-f="ui">Flutter &amp; Dart</span></div>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- Skills -->
-  <section id="skills" class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="section-eyebrow">what I work with</div>
-          <h2>Skills</h2>
-        </div>
-        
-      </div>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Mobile / Flutter</h3>
-          <div class="skill-row">
-            <span>Flutter &amp; Dart</span>
-            <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
-          </div>
-          <div class="skill-row">
-            <span>Riverpod</span>
-            <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
-          </div>
-          <div class="skill-row">
-            <span>GetX / Provider</span>
-            <div class="bar"><div class="bar-fill" style="width:70%"></div></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>Backend &amp; data</h3>
-          <div class="skill-row">
-            <span>Flask (REST APIs)</span>
-            <div class="bar"><div class="bar-fill" style="width:65%"></div></div>
-          </div>
-          <div class="skill-row">
-            <span>Oracle</span>
-            <div class="bar"><div class="bar-fill" style="width:65%"></div></div>
-          </div>
-          <div class="skill-row">
-            <span>MySQL</span>
-            <div class="bar"><div class="bar-fill" style="width:55%"></div></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>Tools &amp; workflow</h3>
-          <div class="chip-row">
-            <span class="chip">GitHub</span>
-            <span class="chip">GitLab</span>
-            <span class="chip">GitHub Actions</span>
-            <span class="chip">Google APIs</span>
-            <span class="chip">Offline-first design</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--
-  <!-- Projects -->
-<section id="projects" class="section">
+<!-- ============ ABOUT (bento) ============ -->
+<section class="section" id="about" style="background: var(--bg-alt)">
   <div class="container">
     <div class="section-head">
-      <div>
-        <div class="section-eyebrow">selected work</div>
-        <h2>Projects</h2>
-      </div>
-      <p class="section-note">Enterprise work built with a team, plus personal builds on the
-        side.</p>
+      <div class="eyebrow" style="color:var(--green)">// get to know me</div>
+      <h2>About me</h2>
     </div>
-
-    <!-- Case 01: SFA -->
-    <div class="case open" data-case="0">
-      <div class="case-head" onclick="toggleCase(this)">
-        <div class="case-index">01</div>
-        <div class="case-title-group">
-          <div class="case-title">SFA — Sales Force Automation <span class="status-pill">In production</span></div>
-          <div class="case-tags">
-            <span class="tag">Flutter</span>
-            <span class="tag">Riverpod</span>
-            <span class="tag">Flask</span>
-            <span class="tag">Oracle</span>
-          </div>
-        </div>
-        <div class="case-chevron">&#9662;</div>
+    <div class="bento">
+      <div class="b b-photo">
+        <img src="Myphoto.jpg" alt="Dipendra Pandey" loading="lazy">
+        <div class="cap"><b>Dipendra Pandey</b><span>Flutter full-stack dev</span></div>
       </div>
-      <div class="case-body">
-        <div class="case-body-inner">
-          <div>
-            <div class="case-col-label">What it does</div>
-            <p class="case-text">A field sales tool that helps sales reps manage daily customer
-              visits, plan routes/beats, and track performance against targets — all on mobile,
-              built for reps working out in the field.</p>
-            <div class="case-col-label">Stack</div>
-            <p class="case-text">Flutter with Riverpod state management, a Flask REST API, and
-              Oracle as the backend database.</p>
-          </div>
-          <div>
-            <div class="case-col-label">Key features</div>
-            <ul class="case-list">
-              <li>Customer visit tracking with location capture</li>
-              <li>Beat / route planning and management</li>
-              <li>Sales vs. collection performance reporting</li>
-              <li>Team-built module, part of the wider development team</li>
-            </ul>
-          </div>
-        </div>
+      <div class="b b-wide">
+        <h3>Who I am</h3>
+        <p>A Flutter full-stack developer with 2+ years of Flutter and about a year working professionally across the stack, building the app, the API and the database behind it. I'm in my final year of B.Sc. CSIT, balancing coursework with production work.</p>
       </div>
-    </div>
-
-    <!-- Case 02: CRM -->
-    <div class="case" data-case="1">
-      <div class="case-head" onclick="toggleCase(this)">
-        <div class="case-index">02</div>
-        <div class="case-title-group">
-          <div class="case-title">CRM — Lead &amp; Customer Management <span class="status-pill">In production</span></div>
-          <div class="case-tags">
-            <span class="tag">Flutter</span>
-            <span class="tag">Riverpod</span>
-            <span class="tag">Freezed</span>
-            <span class="tag">Flask</span>
-            <span class="tag">Oracle</span>
-          </div>
-        </div>
-        <div class="case-chevron">&#9662;</div>
+      <div class="b"><div class="b-num">2+</div><span>years building with Flutter</span></div>
+      <div class="b"><div class="b-num">1+</div><span>year shipping production apps</span></div>
+      <div class="b">
+        <h3>Mobile</h3>
+        <div class="chips"><span>Flutter</span><span>Dart</span><span>Riverpod</span><span>GetX</span><span>Provider</span><span>Freezed</span></div>
       </div>
-      <div class="case-body">
-        <div class="case-body-inner">
-          <div>
-            <div class="case-col-label">What it does</div>
-            <p class="case-text">Manages the sales pipeline from lead capture through to close —
-              tracking each lead's stage, history, and related quotations, with dashboards
-              summarizing wins, losses, and pending deals.</p>
-            <div class="case-col-label">Stack</div>
-            <p class="case-text">Flutter with Freezed for type-safe, JSON-serializable models,
-              Riverpod for state, a Flask API, and Oracle for storage.</p>
-          </div>
-          <div>
-            <div class="case-col-label">Key features</div>
-            <ul class="case-list">
-              <li>Multi-stage lead pipeline with full timeline history</li>
-              <li>Quotation generation tied to leads</li>
-              <li>Win/loss dashboard and lead reporting</li>
-              <li>In-app notifications for lead updates</li>
-            </ul>
-          </div>
-        </div>
+      <div class="b">
+        <h3>Backend &amp; data</h3>
+        <div class="chips"><span>Flask</span><span>Django</span><span>Oracle</span><span>MySQL</span><span>SQLite</span></div>
       </div>
-    </div>
-
-    <!-- Case 03: HRM / ESS -->
-    <div class="case" data-case="2">
-      <div class="case-head" onclick="toggleCase(this)">
-        <div class="case-index">03</div>
-        <div class="case-title-group">
-          <div class="case-title">HRM / ESS — Employee Self-Service <span class="status-pill">In production</span></div>
-          <div class="case-tags">
-            <span class="tag">Flutter</span>
-            <span class="tag">Riverpod</span>
-            <span class="tag">Flask</span>
-            <span class="tag">Oracle</span>
-          </div>
-        </div>
-        <div class="case-chevron">&#9662;</div>
+      <div class="b b-offline">
+        <h3><span class="pulse"></span>Offline-first</h3>
+        <p>Apps that keep working with no signal and sync when they're back online.</p>
       </div>
-      <div class="case-body">
-        <div class="case-body-inner">
-          <div>
-            <div class="case-col-label">What it does</div>
-            <p class="case-text">A mobile self-service portal for employees — profile management,
-              leave requests, company events, holidays, and policy documents, all in one app.</p>
-            <div class="case-col-label">Stack</div>
-            <p class="case-text">Flutter with Riverpod on the client, backed by a Flask API and
-              Oracle for company/HR data.</p>
-          </div>
-          <div>
-            <div class="case-col-label">Key features</div>
-            <ul class="case-list">
-              <li>Employee profile view &amp; edit</li>
-              <li>Leave request submission and tracking</li>
-              <li>Company events, holiday calendar, and policy docs</li>
-              <li>Daily shift/task notes</li>
-            </ul>
-          </div>
-        </div>
+      <div class="b">
+        <h3>Education</h3>
+        <p>B.Sc. CSIT · Tribhuvan University<br><span style="font:12px var(--mono);color:var(--green)">8th semester (final year)</span></p>
       </div>
-    </div>
-
-    <!-- Case 04: ERP -->
-    <div class="case" data-case="3">
-      <div class="case-head" onclick="toggleCase(this)">
-        <div class="case-index">04</div>
-        <div class="case-title-group">
-          <div class="case-title">ERP — Core Enterprise Platform <span class="status-pill">In production</span></div>
-          <div class="case-tags">
-            <span class="tag">Flutter</span>
-            <span class="tag">Riverpod</span>
-            <span class="tag">Flask</span>
-            <span class="tag">Oracle</span>
-          </div>
-        </div>
-        <div class="case-chevron">&#9662;</div>
+      <div class="b b-wide">
+        <h3>Currently learning</h3>
+        <div class="ticker"><div class="ticker-track">
+          <span>System design</span><span>Advanced Flutter animations</span><span>Clean architecture at scale</span><span>CI/CD with GitHub Actions</span>
+          <span>System design</span><span>Advanced Flutter animations</span><span>Clean architecture at scale</span><span>CI/CD with GitHub Actions</span>
+        </div></div>
       </div>
-      <div class="case-body">
-        <div class="case-body-inner">
-          <div>
-            <div class="case-col-label">What it does</div>
-            <p class="case-text">The core enterprise system that SFA, CRM, and HRM/ESS plug into —
-              handling company setup, master data, and shared services that power the other
-              modules.</p>
-            <div class="case-col-label">Stack</div>
-            <p class="case-text">Flutter mobile client, Flask REST API backend, Oracle as the
-              primary database.</p>
-          </div>
-          <div>
-            <div class="case-col-label">Key features</div>
-            <ul class="case-list">
-              <li>Company &amp; branch setup management</li>
-              <li>Shared master data used across modules</li>
-              <li>Document management and templates</li>
-              <li>Built and maintained as part of the core dev team</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Case 05: HouseHunt -->
-<div class="case" data-case="5">
-  <div class="case-head" onclick="toggleCase(this)">
-    <div class="case-index">05</div>
-    <div class="case-title-group">
-      <div class="case-title">HouseHunt — Property Search App <span class="status-pill">In progress</span></div>
-      <div class="case-tags">
-        <span class="tag">Flutter</span>
-        <span class="tag">Riverpod</span>
-        <span class="tag">Django</span>
-        <span class="tag">SQLite</span>
-      </div>
-    </div>
-    <div class="case-chevron">&#9662;</div>
-  </div>
-  <div class="case-body">
-    <div class="case-body-inner">
-      <div>
-        <div class="case-col-label">What it does</div>
-        <p class="case-text">A property listing and search app for browsing available houses,
-          filtering by location and criteria, and viewing detailed listing information — built as
-          a personal project outside of work.</p>
-        <div class="case-col-label">Stack</div>
-        <p class="case-text">Flutter with Riverpod on the client, a Django REST API backend, and
-          SQLite for data storage.</p>
-      </div>
-      <div>
-        <div class="case-col-label">Highlights</div>
-        <ul class="case-list">
-          <li>Property listing browse and search</li>
-          <li>Filter by location and property criteria</li>
-          <li>Currently in active development</li>
-        </ul>
+      <div class="b b-wide">
+        <h3>Tools &amp; workflow</h3>
+        <div class="chips"><span>GitHub</span><span>GitLab</span><span>GitHub Actions</span><span>Google APIs</span><span>REST design</span></div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ============ CONTACT (chat app) ============ -->
+<section class="section" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="eyebrow" style="color:var(--green)">// get in touch</div>
+      <h2 style="color:var(--text);font-size:clamp(28px,3.6vw,42px);line-height:1.1;margin:6px 0 14px">Let's build something.</h2>
+      <p>Open to Flutter / full-stack mobile roles and freelance work. Send a message from the phone, or reach me directly:</p>
+      <div class="contact-links">
+        <div><b>email</b><a href="mailto:dipenpandey111@gmail.com">dipenpandey111@gmail.com</a></div>
+        <div><b>whatsapp</b><a href="https://wa.me/9779867318378" target="_blank" rel="noopener noreferrer">+977 9867318378</a></div>
+        <div><b>github</b><a href="https://github.com/Dipu-111" target="_blank" rel="noopener noreferrer">github.com/Dipu-111</a></div>
+        <div><b>gitlab</b><a href="https://gitlab.com/dipendra0404" target="_blank" rel="noopener noreferrer">gitlab.com/dipendra0404</a></div>
+        <div><b>linkedin</b><a href="https://www.linkedin.com/in/dipendra-pandey-3ba68b373" target="_blank" rel="noopener noreferrer">Dipendra Pandey</a></div>
+      </div>
+    </div>
+    <div class="chat-phone">
+      <div class="phone-face">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="chat">
+            <div class="chat-head"><div class="av">DP</div><div><b>Dipendra</b><small>● online</small></div></div>
+            <div class="msgs" id="msgs" aria-live="polite"></div>
+            <form class="composer" id="composer" autocomplete="on">
+              <input id="chatInput" aria-label="Message" placeholder="Type your name…" required>
+              <button type="submit" aria-label="Send">➤</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><span>© 2026 Dipendra Pandey</span><a href="#top">Back to top ↑</a></div></footer>
+
+<div class="toast" id="toast" role="status">
+  <div class="av">DP</div>
+  <div><b>Dipendra</b><small>now</small><p>Open to Flutter &amp; full-stack roles. Tap to say hi 👋</p></div>
+  <button class="x" id="toastX" aria-label="Dismiss">×</button>
 </div>
+<div class="fps" id="fps"></div>
 
-    <!-- Case 05: Digital Khata -->
-    <div class="case" data-case="6">
-      <div class="case-head" onclick="toggleCase(this)">
-        <div class="case-index">06</div>
-        <div class="case-title-group">
-          <div class="case-title">Digital Khata — Expense Tracker</div>
-          <div class="case-tags">
-            <span class="tag">Flutter</span>
-            <span class="tag">Riverpod</span>
-            <span class="tag">Flask</span>
-            <span class="tag">Oracle</span>
-            <span class="tag">Google APIs</span>
-          </div>
+<script>
+// ---------- Material icons used by the rebuilt app screens ----------
+const ICONS = {
+  menu: 'M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z',
+  bell: 'M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z',
+  cal: 'M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z',
+  clock: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z',
+  login: 'M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z',
+  logout: 'M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z',
+  dash: 'M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z',
+  add: 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
+  filter: 'M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z',
+  person: 'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z',
+  home: 'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z',
+  money: 'M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z',
+  task: 'M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z',
+  chart: 'M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z',
+  done: 'M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z',
+  hourglass: 'M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6z',
+  trend: 'M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z',
+  card: 'M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z',
+  cart: 'M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0020 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z',
+  factory: 'M22 22H2V10l7-3v2l5-2v3h3l1-8h3l1 8v12z',
+  target: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z',
+};
+const ic = (n) => `<svg class="i" viewBox="0 0 24 24"><path d="${ICONS[n]}"/></svg>`;
+const statusBar = (bg, fg) => `<div class="sbar" style="background:${bg};color:${fg}"><span>9:41</span><span>▂▄▆ ▮</span></div>`;
+const nowTime = () => new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+// ---------- Screens rebuilt from the Flutter code (demo data only) ----------
+// SFA: sales_force_automation_screen.dart
+const sfaData = [
+  { calls: [12, 15], visit: [8, 10], sales: ['Rs 42K', 70], coll: ['Rs 18K', 55] },
+  { calls: [214, 300], visit: [160, 220], sales: ['Rs 9.4L', 78], coll: ['Rs 6.1L', 64] },
+];
+const sfaScreen = `
+  <div class="app sfa">
+    ${statusBar('#fff', '#000')}
+    <div class="abar" style="background:#fff">${ic('menu')}<span>SFA Dashboard</span><span class="sp"></span>${ic('bell')}</div>
+    <div class="abody">
+      <div class="attend">
+        <div class="t">${ic('cal')} Attendance <span class="sp"></span><small data-today></small></div>
+        <div class="cols">
+          <div><small>Log In Time</small><b>09:12 AM</b><small>📍 Location</small></div>
+          <div><small>Log Out Time</small><b data-out>--:--</b><small>📍 Location</small></div>
         </div>
-        <div class="case-chevron">&#9662;</div>
+        <button data-act="sfa-logout">Log Out</button>
       </div>
-      <div class="case-body">
-        <div class="case-body-inner">
-          <div>
-            <div class="case-col-label">What it does</div>
-            <p class="case-text">A personal- and shop-level expense tracker that works offline
-              first, then syncs when connectivity returns. Supports exporting records to Excel and
-              backing up / restoring data, with Google API integration for supporting features.</p>
-            <div class="case-col-label">Stack</div>
-            <p class="case-text">Flutter + Riverpod on the client, a Flask API on the backend, and
-              Oracle for data storage. Version-controlled on GitHub.</p>
-          </div>
-          <div>
-            <div class="case-col-label">Highlights</div>
-            <ul class="case-list">
-              <li>Offline-first architecture with background sync</li>
-              <li>Excel export for record-keeping outside the app</li>
-              <li>Backup &amp; reload flow to prevent data loss</li>
-              <li>Google API integration for supporting features</li>
-            </ul>
-          </div>
-        </div>
-        <div class="arch-diagram-wrap">
-          <div class="case-col-label" style="padding: 0 24px;">How it's wired together</div>
-          <svg viewBox="0 0 720 140" class="arch-diagram" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="var(--text-faint)"></path>
-              </marker>
-            </defs>
-            <rect x="10" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--green)" stroke-width="1.5"></rect>
-            <text x="75" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Flutter</text>
-            <text x="75" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">Riverpod UI</text>
-            <rect x="195" y="10" width="130" height="55" rx="10" fill="var(--bg-card-2)" stroke="var(--line-strong)" stroke-width="1.5"></rect>
-            <text x="260" y="34" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Local DB</text>
-            <text x="260" y="50" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">offline cache</text>
-            <rect x="195" y="80" width="130" height="55" rx="10" fill="var(--bg-card-2)" stroke="var(--amber)" stroke-width="1.5"></rect>
-            <text x="260" y="104" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Sync Engine</text>
-            <text x="260" y="120" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">background job</text>
-            <rect x="380" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--green)" stroke-width="1.5"></rect>
-            <text x="445" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Flask API</text>
-            <text x="445" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">REST endpoints</text>
-            <rect x="565" y="40" width="130" height="60" rx="10" fill="var(--bg-card-2)" stroke="var(--line-strong)" stroke-width="1.5"></rect>
-            <text x="630" y="66" text-anchor="middle" fill="var(--text)" font-size="12" font-family="Poppins, sans-serif" font-weight="600">Oracle DB</text>
-            <text x="630" y="82" text-anchor="middle" fill="var(--text-faint)" font-size="9.5" font-family="'JetBrains Mono', monospace">persistent store</text>
-            <line x1="140" y1="60" x2="192" y2="38" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
-            <line x1="140" y1="80" x2="192" y2="105" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
-            <line x1="325" y1="108" x2="378" y2="75" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
-            <line x1="510" y1="70" x2="562" y2="70" stroke="var(--text-faint)" stroke-width="1.3" marker-end="url(#arrow)"></line>
-          </svg>
-        </div>
+      <div class="card-w">
+        <div class="ct"><span style="color:#155DFB;display:flex">${ic('target')}</span>Target vs Achieved</div>
+        <div class="legend"><span><i style="background:#155DFC"></i>Target</span><span><i style="background:#2DB3DC"></i>Achieved</span></div>
+        <div class="bars" data-bars>${'<div class="g"><span style="background:#155DFC"></span><span style="background:#2DB3DC"></span></div>'.repeat(4)}</div>
+        <div class="bar-lbl"><span>Calls</span><span>Visit</span><span>Sales</span><span>Collections</span></div>
+      </div>
+      <div class="seg"><button class="on" data-act="sfa-tab" data-v="0">Today</button><button data-act="sfa-tab" data-v="1">MTD</button></div>
+      <div class="kpis" data-kpis></div>
+      <div class="tbl">
+        <div class="tr th"><span>Customer</span><span>Order</span><span>Dispatch</span><span>Pending</span></div>
+        <div class="tr"><span>Demo Traders</span><span>120</span><span>80</span><span>40</span></div>
       </div>
     </div>
+    <div class="bnav dark"><button class="on">${ic('dash')}SFA Dashboard</button><button data-act="goto" data-v="1">${ic('dash')}CRM Dashboard</button></div>
+    <div class="toast-in"></div>
+  </div>`;
 
-    <!-- Case 06: To-do App -->
-    <div class="case" data-case="7">
-      <div class="case-head" onclick="toggleCase(this)">
-        <div class="case-index">07</div>
-        <div class="case-title-group">
-          <div class="case-title">To-do List App <span class="status-pill">Personal project</span></div>
-          <div class="case-tags">
-            <span class="tag">Flutter</span>
-            <span class="tag">Riverpod</span>
-          </div>
-        </div>
-        <div class="case-chevron">&#9662;</div>
+function renderSfa(app, v) {
+  const d = sfaData[v];
+  const pct = (a, b) => Math.round((a / b) * 100);
+  const ach = [pct(...d.calls), pct(...d.visit), d.sales[1], d.coll[1]];
+  app.querySelectorAll('[data-bars] .g').forEach((g, k) => {
+    g.children[0].style.height = '100%';
+    g.children[1].style.height = `${ach[k]}%`;
+  });
+  app.querySelector('[data-kpis]').innerHTML = `
+    <div class="kpi"><small>Calls</small><b>${d.calls[0]}/${d.calls[1]}</b></div>
+    <div class="kpi"><small>Visit</small><b>${d.visit[0]}/${d.visit[1]}</b></div>
+    <div class="kpi"><small>Sales</small><b>${d.sales[0]}</b></div>
+    <div class="kpi"><small>Collections</small><b>${d.coll[0]}</b></div>`;
+}
+
+// CRM: pbrain_dashboard_view.dart + customer_card.dart + custom_lead_card.dart
+const crmLeads = [
+  { t: 'Solar inverter supply', c: 'Demo Hotels', due: '05-Nov-2026', days: 'Due Days: 8', p: 45, s: 'Pending' },
+  { t: 'Annual maintenance contract', c: 'Sample Pharma', due: '20-Oct-2026', days: 'Past Days: 8', p: 30, s: 'Overdue' },
+  { t: 'Fleet tracking devices', c: 'Test Logistics', due: '12-Oct-2026', days: 'Ontime Close: 10-Oct', p: 100, s: 'Closed' },
+  { t: 'ERP licence renewal', c: 'Acme Agro', due: '30-Nov-2026', days: 'Due Days: 33', p: 60, s: 'Pending' },
+  { t: 'Printer fleet upgrade', c: 'Demo Schools', due: '15-Oct-2026', days: 'Past Days: 13', p: 20, s: 'Overdue' },
+];
+const crmColor = { Pending: '#F57F57', Overdue: '#DE564C', Closed: '#4CAF50' };
+const metric = (key, n, pctTxt, w, grad, pc, icon) => `
+  <button class="metric${key === 'Total' ? ' on' : ''}" data-act="crm-filter" data-v="${key}" style="background:${grad}">
+    <div class="n">${n}${ic(icon)}</div>
+    <small><span>${key} Leads</span><span>${pctTxt}</span></small>
+    <div class="pb"><i style="width:${w}%;background:${pc}"></i></div>
+  </button>`;
+const crmScreen = `
+  <div class="app crm">
+    <div class="hdr">
+      ${statusBar('transparent', '#fff')}
+      <div class="user"><span class="av">D</span>Demo User</div>
+      <div class="abar">${ic('menu')}<span>CRM DASHBOARD</span><span class="sp"></span><span class="chip-d">This Month ▾</span>${ic('bell')}</div>
+      <div class="range">This Month, 01 Oct - 31 Oct</div>
+    </div>
+    <div class="metrics">
+      ${metric('Total', 48, '', 100, 'linear-gradient(135deg, rgba(236,72,135,.4), rgb(185,84,164))', 'rgb(185,84,164)', 'chart')}
+      ${metric('Closed', 21, '44%', 44, 'linear-gradient(135deg, rgba(69,197,243,.4), rgb(102,146,217))', 'rgb(102,146,217)', 'done')}
+      ${metric('Pending', 19, '40%', 40, 'linear-gradient(135deg, rgba(254,184,44,.8), rgb(245,127,87))', 'rgb(245,127,87)', 'clock')}
+      ${metric('Overdue', 8, '17%', 17, 'linear-gradient(135deg, rgb(233,155,148), rgb(222,86,76))', 'rgb(166,37,37)', 'hourglass')}
+    </div>
+    <div class="todo tap" data-act="crm-todo"><b>To-do List</b><span>View All</span></div>
+    <div class="sec-t"><span data-sec>All Leads</span><a>View All</a></div>
+    <div data-leads></div>
+    <button class="fab" data-act="toast" data-v="Opening new lead form…">${ic('add')}Lead</button>
+    <div class="bnav dark"><button data-act="goto" data-v="0">${ic('dash')}SFA Dashboard</button><button class="on">${ic('dash')}CRM Dashboard</button></div>
+    <div class="scrim" data-act="close-sheet"></div><div class="sheet" data-sheet></div>
+    <div class="toast-in"></div>
+  </div>`;
+
+function renderCrm(app, filter) {
+  const list = crmLeads.filter(l => filter === 'Total' || l.s === filter).slice(0, 3);
+  app.querySelector('[data-sec]').textContent = filter === 'Total' ? 'All Leads' : `${filter} Leads`;
+  app.querySelector('[data-leads]').innerHTML = list.map(l => `
+    <div class="lead tap" data-act="toast" data-v="Opening lead timeline…">
+      <span class="la" style="background:${crmColor[l.s]}">${l.c[0]}</span>
+      <div class="lt"><b>${l.t}</b><span>Customer: </span>${l.c}<br><span>Due Date: </span>${l.due}<br><span>${l.days}</span></div>
+      <span class="pct" style="--p:${l.p}%">${l.p}%</span>
+    </div>`).join('');
+}
+
+// ESS: ess/screen/ess_dashboard.dart + ess_navigation_screen.dart
+const essChips = [
+  ['Present', 18, '#88E788', '#46B446'], ['Absent', 1, '#FF5F5F', '#B72225'], ['Leave', 2, '#C17AFF', '#980FFA'], ['Holiday', 3, '#00D2F2', '#0092B8'],
+  ['Overtime', 4, '#99A1AE', '#495565'], ['Late Arival', 2, '#FDC700', '#FF6800'], ['Early\nDeparture', 1, '#FAFF00', '#9C9E20'], ['Part-Time', 0, '#88D8E7', '#3BA9C0'],
+];
+const qaBtn = (act, label, g1, g2, color, icon) =>
+  `<button data-act="${act}" style="background:linear-gradient(135deg,${g1},${g2})"><span style="color:${color};display:flex">${ic(icon)}</span>${label}</button>`;
+const essScreen = `
+  <div class="app ess">
+    ${statusBar('#fff', '#000')}
+    <div class="abar">DASHBOARD</div>
+    <div class="abody">
+      <div class="seg"><button class="on" data-act="ess-day" data-v="0">Today</button><button data-act="ess-day" data-v="1">Yesterday</button></div>
+      <div class="att">
+        <div class="t">${ic('clock')} Attendance <span class="sp"></span><small data-date></small></div>
+        <div class="clock" data-clock>--:--</div>
+        <small data-status>Not checked in yet</small>
+        <div class="btns"><button data-act="ess-in">Check In</button><button class="ghost" data-act="ess-out" disabled>Check Out</button></div>
       </div>
-      <div class="case-body">
-        <div class="case-body-inner">
-          <div>
-            <div class="case-col-label">What it does</div>
-            <p class="case-text">A lightweight personal task manager for organizing day-to-day
-              to-dos, built to practice clean state management and UI patterns outside of work
-              projects.</p>
-          </div>
-          <div>
-            <div class="case-col-label">Highlights</div>
-            <ul class="case-list">
-              <li>Simple, fast task creation and tracking</li>
-              <li>Clean card-based UI</li>
-            </ul>
-          </div>
-        </div>
+      <div class="mini3">
+        <div style="background:#EFF6FF"><b style="color:#1447E6" data-hours>0.0</b>Hours</div>
+        <div style="background:linear-gradient(135deg,#F0FDF4,#DBFBE6)"><b style="color:#008235">4/5</b>This Week</div>
+        <div style="background:linear-gradient(135deg,#FAF5FE,#F2E7FE)"><b style="color:#8200DA">96%</b>Attendance</div>
+      </div>
+      <div class="chips8">${essChips.map(([l, n, a, b]) => `<div><i style="background:linear-gradient(135deg,${a},${b})">${n}</i>${l}</div>`).join('')}</div>
+      <div class="qa-t">Quick Actions</div>
+      <div class="qa">
+        ${qaBtn('ess-action', 'Check\nIn/Out', '#EEF5FE', '#DAEAFE', '#2B7FFF', 'clock')}
+        ${qaBtn('ess-leave', 'Apply\nLeave', '#F5ECFF', '#EAD7FF', '#AD46FF', 'cal')}
+        ${qaBtn('ess-loan', 'Loan\nAdvance', '#E8FEEB', '#D3FAD8', '#00A63E', 'money')}
+        ${qaBtn('ess-task', 'Assigned\nTask', '#FFF7ED', '#FFEDD5', '#FF6800', 'task')}
       </div>
     </div>
+    <div class="bnav white"><button class="on">${ic('home')}Dashboard</button><button data-act="toast" data-v="Opening calendar…">${ic('cal')}Calendar</button><button data-act="toast" data-v="Opening profile…">${ic('person')}Profile</button></div>
+    <div class="scrim" data-act="close-sheet"></div><div class="sheet" data-sheet></div>
+    <div class="toast-in"></div>
+  </div>`;
 
-    <div class="github-repos" id="githubRepos">
-  <div class="case-col-label" style="padding: 0 0 14px;">Recent on GitHub</div>
-  <div class="repo-grid" id="repoGrid">
-    <!-- populated by JS -->
-  </div>
-  <a href="https://github.com/Dipu-111" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 16px;">Visit full profile →</a>
-</div>
-
-  </div>
-</section>  <!--
-  <!-- Achievements -->
-  <!--
-  <section id="achievements" class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="section-eyebrow">along the way</div>
-          <h2>Achievements &amp; Certifications</h2>
-        </div>
-        <p class="section-note">Add your certificates, hackathon results, or coursework awards here.</p>
-      </div>
-      <div class="achievements-grid">
-        <div class="achievement-card">
-          <div class="achievement-icon">🎓</div>
-          <div>
-            <div class="achievement-title">Add a certification</div>
-            <div class="achievement-sub">Issuer · Year</div>
-          </div>
-        </div>
-        <div class="achievement-card">
-          <div class="achievement-icon">🏆</div>
-          <div>
-            <div class="achievement-title">Add a hackathon or contest</div>
-            <div class="achievement-sub">Event · Result</div>
-          </div>
-        </div>
-        <div class="achievement-card">
-          <div class="achievement-icon">📘</div>
-          <div>
-            <div class="achievement-title">Add a course</div>
-            <div class="achievement-sub">Platform · Year</div>
-          </div>
-        </div>
+// PB Smart: dashboard/screens/dashboard_page.dart + sales_section.dart + quick_info_section_components/*
+const xt = (title, rows, open, head) => `
+  <div class="xt${open ? ' open' : ''}">
+    <div class="xh" data-act="xt-toggle" ${head ? `style="background:${head}"` : ''}><span>${title}</span><span>${open ? '−' : '+'}</span></div>
+    <div class="xb">${rows.map(([k, v, cls]) => `<div class="r2"><span>${k}</span><b class="${cls || ''}">${v}</b></div>`).join('')}</div>
+  </div>`;
+const pbsPanes = {
+  sales: `
+    <div class="card-w">
+      <div class="pt">Monthly Target Analysis</div>
+      <div class="gauges">
+        <div class="gauge"><div class="g" style="--c:#F44336;--p:100%"></div><b>Rs 1.2 Cr</b>Target</div>
+        <div class="gauge"><div class="g" style="--c:#2196F3;--p:72%"></div><b>Rs 86 L</b>Achieved 72%</div>
       </div>
     </div>
-  </section>
-  -->
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="section-eyebrow">get in touch</div>
-          <h2>Contact</h2>
-        </div>
-        <p class="section-note">Open to Flutter / full-stack mobile roles and freelance work.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p><strong>Phone:</strong> 9867318378</p>
-          <p><strong>Email:</strong> dipenpandey111@email.com</p>
-          <p><strong>GitHub:</strong>
-            <a href="https://github.com/Dipu-111" target="_blank" rel="noopener noreferrer">github.com/Dipu-111</a>
-          </p>
-          <p><strong>GitLab:</strong>
-            <a href="https://gitlab.com/dipendra0404" target="_blank" rel="noopener noreferrer">gitlab.com/dipendra0404</a>
-          </p>
-
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/dipendra-pandey-3ba68b373" target="_blank" aria-label="LinkedIn"
-              rel="noopener noreferrer">
-              <svg role="img" viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg" width="30"
-                height="30">
-                <title>LinkedIn</title>
-                <path
-                  d="M20.452 20.452h-3.554v-5.569c0-1.328-.025-3.036-1.849-3.036-1.851 0-2.134 1.446-2.134 2.941v5.664H9.357V9h3.414v1.561h.047c.476-.9 1.637-1.849 3.369-1.849 3.605 0 4.27 2.373 4.27 5.458v6.282zM5.337 7.433c-1.144 0-2.07-.927-2.07-2.07 0-1.144.926-2.07 2.07-2.07 1.144 0 2.07.926 2.07 2.07 0 1.143-.926 2.07-2.07 2.07zM6.93 20.452H3.744V9h3.186v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.728v20.543C0 23.224.792 24 1.771 24h20.451C23.208 24 24 23.224 24 22.271V1.728C24 .774 23.208 0 22.225 0z" />
-              </svg>
-            </a>
-            <a href="https://www.facebook.com/share/198tDtkSfx/?mibextid=qi2Omg" target="_blank" aria-label="Facebook"
-              rel="noopener noreferrer">
-              <svg role="img" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg" width="30"
-                height="30">
-                <title>Facebook</title>
-                <path
-                  d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h11.49v-9.294H9.691v-3.622h3.124V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.098 2.795.142v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.59l-.467 3.622h-3.123V24h6.116C23.407 24 24 23.407 24 22.675V1.325C24 .593 23.407 0 22.675 0z" />
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/dip.en.dra?igsh=NGNhOGI2azQzdTY3" target="_blank"
-              aria-label="Instagram" rel="noopener noreferrer">
-              <svg role="img" viewBox="0 0 24 24" fill="#E4405F" xmlns="http://www.w3.org/2000/svg" width="30"
-                height="30">
-                <title>Instagram</title>
-                <path
-                  d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.5 1.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm-4.25 1.75a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
-              </svg>
-            </a>
-            <a href="https://wa.me/9779867318378" target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">
-              <svg role="img" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg" width="30"
-                height="30">
-                <title>WhatsApp</title>
-                <path
-                  d="M20.52 3.48A11.77 11.77 0 0012 0C5.37 0 0 5.37 0 12c0 2.1.55 4.08 1.52 5.81L0 24l6.48-1.51A11.91 11.91 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.2-3.48-8.52zM12 21.5c-1.78 0-3.5-.47-4.97-1.36l-.36-.22-3.83.89.85-3.75-.24-.38A9.42 9.42 0 012.5 12c0-5.24 4.26-9.5 9.5-9.5s9.5 4.26 9.5 9.5-4.26 9.5-9.5 9.5zm5.32-6.48c-.29-.15-1.7-.83-1.97-.92-.26-.1-.45-.15-.64.15-.19.29-.74.92-.91 1.11-.17.19-.34.21-.63.07a8.47 8.47 0 01-2.49-1.53 9.41 9.41 0 01-1.75-2.17c-.18-.31 0-.48.13-.63.13-.13.29-.33.44-.5a1.98 1.98 0 00.3-.51c.1-.19.05-.36-.02-.51-.07-.15-.63-1.53-.87-2.09-.23-.55-.46-.47-.64-.48l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.46 0 1.46 1.02 2.88 1.17 3.08.15.2 2.03 3.1 4.93 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.55-.08 1.7-.69 1.94-1.35.24-.66.24-1.22.17-1.35-.07-.13-.26-.2-.55-.36z" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xkodewpj" method="POST">
-          <label>
-            Name
-            <input type="text" name="name" required placeholder="Your name">
-          </label>
-          <label>
-            Email
-            <input type="email" name="_replyto" required placeholder="you@example.com">
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="4" required placeholder="What would you like to say?"></textarea>
-          </label>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
+    <div class="pt">Quick Info</div>
+    <div class="qi">
+      ${[['Today', '4,25,000'], ['Yesterday', '3,90,500'], ['This Week', '18,40,000'], ['This Month', '86,10,000']]
+        .map(([d, a]) => `<button data-act="pbs-report"><b>${d}</b><small>Amount: Rs ${a}</small></button>`).join('')}
+    </div>
+    <div class="card-w"><div class="pt">Monthly Sales</div><div class="mchart">${[48, 60, 52, 74, 66, 82, 70, 90].map(h => `<span style="height:${h}%"></span>`).join('')}</div></div>`,
+  collection: xt('CASH IN HAND', [['TDay Paid :', '1,25,000', 'neg'], ['TDay Rec :', '3,40,000', 'pos'], ['MTD Paid :', '22,10,000', 'neg'], ['MTD Rec :', '31,75,000', 'pos'], ['MTD Deviation', '+9,65,000', 'pos']], true)
+    + xt('PDC', [['Due Today', '2'], ['This Week', '7'], ['Amount', 'Rs 6,40,000']])
+    + xt('Customer BG', [['Active BG', '14'], ['Expiring (30d)', '3', 'neg']]),
+  payment: xt('SELLING & DISTRIBUTION EXP', [['Today', '45,000'], ['MTD', '6,20,000'], ['Budget used', '62%']], true)
+    + xt('FINANCIAL EXP ANALYSIS', [['Interest', '2,10,000'], ['Bank charges', '18,500']])
+    + xt('VAT STATUS', [['Output VAT', '11,20,000'], ['Input VAT', '8,45,000'], ['Payable', '2,75,000', 'neg']]),
+  purchase: `
+    <div class="card-w"><div class="pt">Monthly Purchase</div><div class="mchart">${[40, 62, 55, 80, 48, 70, 90, 66].map(h => `<span style="height:${h}%"></span>`).join('')}</div></div>`
+    + xt('PURCHASE -RM (QTY)', [['Today', '120 MT'], ['MTD', '2,450 MT']], true)
+    + xt('PURCHASE -EXCL RM (VALUE)', [['Today', '3,10,000'], ['MTD', '41,00,000']]),
+  production: xt('Today Dispatch Status', [['Total Vehicle :', '24'], ['Export Sales-MT :', '120'], ['Local Sales-MT:', '310'], ['LC Sales -MT :', '45'],
+      ['Total Sales Qty - MT :', '475'], ['Avg per truck :', '19.8'], ['Pending MLS :', '3', 'neg']], true, 'rgba(50,200,112,.75)')
+    + `<div class="card-w"><div class="pt">Production</div><div class="mchart">${[55, 70, 62, 85, 74, 90].map(h => `<span style="height:${h}%"></span>`).join('')}</div></div>`,
+};
+const pbsTab = (key, label, icon, on) => `<button class="${on ? 'on' : ''}" data-act="pbs-tab" data-v="${key}">${ic(icon)}${label}</button>`;
+const pbsScreen = `
+  <div class="app pbs">
+    <div class="top">
+      ${statusBar('#2196F3', '#fff')}
+      <div class="abar">${ic('menu')}<span>Dashboard</span><span class="sp"></span>${ic('filter')}${ic('bell')}</div>
+      <div class="mq">Management Quick Info</div>
+      <div class="tabs">
+        ${pbsTab('sales', 'Sales', 'trend', true)}${pbsTab('collection', 'Collection', 'money')}${pbsTab('payment', 'Payment', 'card')}
+        ${pbsTab('purchase', 'Purchase', 'cart')}${pbsTab('production', 'Production', 'factory')}
       </div>
     </div>
-  </section>
+    <div class="abody" data-pane>${pbsPanes.sales}</div>
+    <div class="scrim" data-act="close-sheet"></div><div class="sheet" data-sheet></div>
+    <div class="toast-in"></div>
+  </div>`;
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© 2026 Dipendra Pandey</span>
-      <a href="#" id="backToTop">Back to top ↑</a>
-    </div>
-  </footer>
+// ---------- Phone screens, matched to projects.json by id ----------
+const phoneScreens = {
+  sfa: { screen: sfaScreen, init: (app) => {
+    app.querySelector('[data-today]').textContent = new Date().toLocaleDateString([], { day: 'numeric', month: 'short' });
+    renderSfa(app, 0);
+  } },
+  crm: { screen: crmScreen, init: (app) => renderCrm(app, 'Total') },
+  ess: { screen: essScreen, init: (app) => {
+    app.querySelector('[data-date]').textContent = new Date().toLocaleDateString([], { weekday: 'short', day: 'numeric', month: 'short' });
+  } },
+  pbsmart: { screen: pbsScreen },
+  househunt: { screen: `
+      <div class="app-h">HouseHunt <span class="badge">beta</span></div>
+      <div class="search">🔍 Lalitpur, 2BHK</div>
+      <div class="house"><div class="img"></div><div class="meta"><span>Jhamsikhel flat</span><b>Rs 35k</b></div></div>
+      <div class="house"><div class="img" style="filter:hue-rotate(40deg)"></div><div class="meta"><span>Sanepa house</span><b>Rs 60k</b></div></div>` },
+  khata: { screen: `
+      <div class="app-h">Digital Khata <span class="badge">offline</span></div>
+      <div class="card"><span class="muted">THIS MONTH</span><div class="big">Rs 12,450</div></div>
+      <div class="card">
+        <div class="row"><span class="dot"></span>Shop expense<span class="r">− 850</span></div>
+        <div class="row"><span class="dot a"></span>Personal<span class="r">− 320</span></div>
+        <div class="row"><span class="dot"></span>Backup synced<span class="r">✓</span></div>
+      </div>
+      <div class="cta">Export to Excel ↧</div>` },
+  todo: { screen: `
+      <div class="app-h">Today <span class="badge">3 / 5</span></div>
+      <div class="card">
+        <div class="row"><span class="chk on">✓</span><span class="done">Fix sync bug</span></div>
+        <div class="row"><span class="chk on">✓</span><span class="done">Review PR</span></div>
+        <div class="row"><span class="chk on">✓</span><span class="done">Gym</span></div>
+        <div class="row"><span class="chk"></span>Write case study</div>
+        <div class="row"><span class="chk"></span>Update portfolio</div>
+      </div>
+      <div class="cta">+ Add task</div>` },
+};
 
-  <script src="Portfolio.js"></script>
+// Filled from projects.json (edit that file to change the project list)
+const projects = [];
+
+const generic = { ui: 'Flutter & Dart', state: 'Riverpod · GetX', apiName: 'Flask REST', data: 'Oracle · MySQL', table: 'visits',
+  api: ['GET /api/visits', 'POST /api/leads', 'PUT /api/sync'] };
+
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+
+// ---------- Build project steps ----------
+const stepsEl = document.getElementById('steps');
+const buildSteps = () => stepsEl.insertAdjacentHTML('beforeend', projects.map((p, i) => `
+  <article class="step" data-kind="project" data-p="${i}" style="--accent:${p.accent}">
+    <div class="eyebrow">${String(i + 1).padStart(2, '0')} / ${String(projects.length).padStart(2, '0')}</div>
+    <h2>${p.name} <span class="status">${p.status}</span></h2>
+    <p>${p.desc}</p>
+    <ul>${p.points.map(x => `<li>${x}</li>`).join('')}</ul>
+    <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+    ${p.team ? '<div class="team-note">Built with the company dev team</div>' : ''}
+  </article>`).join(''));
+
+// ---------- Phone screen + layer labels ----------
+const screenEl = document.getElementById('screen');
+const root = document.documentElement;
+
+function lockScreen() {
+  const d = new Date();
+  const time = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+  const date = d.toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric' });
+  return `<div class="screen-inner lock" style="position:static;height:100%;padding:12% 0 0">
+    <div class="lock-time">${time}</div><div class="lock-date">${date}</div>
+    <div class="lock-name"><span id="typed"></span><i class="caret"></i></div>
+    <div class="lock-role">Flutter Full-Stack Developer</div>
+    <div class="lock-hint">scroll to unlock ↓</div></div>`;
+}
+
+function setStackLabels(s) {
+  document.querySelectorAll('[data-f]').forEach(el => {
+    const k = el.dataset.f;
+    if (k === 'api') el.innerHTML = s.api.map(a => `<div class="api-line"><span>${a}</span><i>200</i></div>`).join('');
+    else el.textContent = s[k];
+  });
+}
+
+let shownKey = null;
+function showScreen(key) {
+  if (key === shownKey) return;
+  const first = shownKey === null;
+  shownKey = key;
+  const p = key === 'lock' ? null : projects[key];
+  root.style.setProperty('--accent', p ? p.accent : '#57d687');
+  const apply = () => {
+    renderApp(p);
+    setStackLabels(p ? p.stack : generic);
+    screenEl.classList.remove('swap');
+    if (!p) typeName(first ? 500 : 0);
+  };
+  if (first || reduceMotion) return apply();
+  screenEl.classList.add('swap');
+  setTimeout(apply, 180);
+}
+
+function renderApp(p) {
+  screenEl.innerHTML = p ? p.screen : lockScreen();
+  const app = screenEl.querySelector('.app');
+  if (p && p.init && app) p.init(app);
+}
+
+// ---------- Tap actions inside the rebuilt app screens ----------
+const toastTimers = new WeakMap();
+function toastIn(app, msg) {
+  const t = app.querySelector('.toast-in');
+  if (!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimers.get(t));
+  toastTimers.set(t, setTimeout(() => t.classList.remove('show'), 1600));
+}
+function openSheet(app, html) {
+  app.querySelector('[data-sheet]').innerHTML = html + '<button class="close" data-act="close-sheet">Close</button>';
+  app.querySelector('[data-sheet]').classList.add('open');
+  app.querySelector('.scrim').classList.add('open');
+}
+function closeSheet(app) {
+  app.querySelector('[data-sheet]')?.classList.remove('open');
+  app.querySelector('.scrim')?.classList.remove('open');
+}
+function setSeg(btn) {
+  btn.parentElement.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
+}
+
+function essCheckIn(app) {
+  const btnIn = app.querySelector('[data-act="ess-in"]');
+  if (btnIn.disabled) return;
+  btnIn.disabled = true;
+  btnIn.textContent = 'Fetching Location';
+  setTimeout(() => {
+    app.querySelector('[data-clock]').textContent = nowTime();
+    app.querySelector('[data-status]').textContent = '✓ Checked in · On Time · 📍 Office';
+    btnIn.textContent = 'Checked In';
+    app.querySelector('[data-act="ess-out"]').disabled = false;
+    toastIn(app, 'Check in successful');
+  }, 900);
+}
+function essCheckOut(app) {
+  const btnOut = app.querySelector('[data-act="ess-out"]');
+  if (btnOut.disabled) return;
+  btnOut.disabled = true;
+  btnOut.textContent = 'Fetching Location';
+  setTimeout(() => {
+    btnOut.textContent = 'Checked Out';
+    app.querySelector('[data-status]').textContent = `✓ Checked out at ${nowTime()}`;
+    app.querySelector('[data-hours]').textContent = '8.2';
+    toastIn(app, 'Check out successful');
+  }, 900);
+}
+
+const actions = {
+  'goto': (el) => { const p = projects[+el.dataset.v]; renderApp(p); },
+  'toast': (el, app) => toastIn(app, el.dataset.v),
+  'close-sheet': (el, app) => closeSheet(app),
+  'sfa-tab': (el, app) => { setSeg(el); renderSfa(app, +el.dataset.v); },
+  'sfa-logout': (el, app) => {
+    app.querySelector('[data-out]').textContent = nowTime();
+    el.textContent = 'Logged out ✓';
+    el.disabled = true;
+    toastIn(app, 'Location captured, logged out');
+  },
+  'crm-filter': (el, app) => { setSeg(el); renderCrm(app, el.dataset.v); },
+  'crm-todo': (el, app) => openSheet(app, `<h4>To-do List</h4>
+    ${['Call Demo Hotels about quotation', 'Send AMC renewal PDF', 'Follow up on overdue lead'].map(t => `<div class="task" data-act="task"><i></i><span>${t}</span></div>`).join('')}`),
+  'task': (el) => { el.classList.toggle('done'); el.querySelector('i').textContent = el.classList.contains('done') ? '✓' : ''; },
+  'ess-day': (el, app) => {
+    setSeg(el);
+    const y = el.dataset.v === '1';
+    const [inBtn, outBtn] = app.querySelectorAll('.att .btns button');
+    app.querySelector('[data-clock]').textContent = y ? '09:02 → 17:45' : '--:--';
+    app.querySelector('[data-status]').textContent = y ? 'On Time · 8.7 hrs' : 'Not checked in yet';
+    app.querySelector('[data-hours]').textContent = y ? '8.7' : '0.0';
+    inBtn.disabled = y; outBtn.disabled = true;
+    inBtn.textContent = 'Check In'; outBtn.textContent = 'Check Out';
+  },
+  'ess-in': (el, app) => essCheckIn(app),
+  'ess-out': (el, app) => essCheckOut(app),
+  'ess-action': (el, app) => openSheet(app, `<h4>Select Action</h4>
+    <div class="act2">
+      <button data-act="ess-sheet-in" style="background:linear-gradient(135deg,#E8F8EF,#C9F0DA)"><span style="color:#27AE60;display:flex">${ic('login')}</span>Check\nIN</button>
+      <button data-act="ess-sheet-out" style="background:linear-gradient(135deg,#FFEBEE,#FFCDD2)"><span style="color:#E57373;display:flex">${ic('logout')}</span>Check\nOUT</button>
+    </div>`),
+  'ess-sheet-in': (el, app) => { closeSheet(app); essCheckIn(app); },
+  'ess-sheet-out': (el, app) => { closeSheet(app); essCheckOut(app); },
+  'ess-leave': (el, app) => openSheet(app, `<h4>Leave Balance</h4>
+    <div class="tbl c3"><div class="tr th"><span>Type</span><span>Taken</span><span>Balance</span></div>
+      <div class="tr"><span>Annual</span><span>5</span><span>9</span></div>
+      <div class="tr"><span>Sick</span><span>1</span><span>5</span></div>
+      <div class="tr"><span>Casual</span><span>2</span><span>4</span></div></div>
+    <button class="close" style="background:#AD46FF" data-act="ess-leave-send">Apply Leave</button>`),
+  'ess-leave-send': (el, app) => { closeSheet(app); toastIn(app, 'Leave request sent for approval'); },
+  'ess-loan': (el, app) => openSheet(app, `<h4>Loan / Advance</h4>
+    <div class="tbl c3"><div class="tr th"><span>Amount</span><span>Deduction</span><span>Balance</span></div>
+      <div class="tr"><span>50,000</span><span>5,000</span><span>30,000</span></div></div>
+    <button class="close" style="background:#00A63E" data-act="ess-loan-send">Request Advance</button>`),
+  'ess-loan-send': (el, app) => { closeSheet(app); toastIn(app, 'Advance request submitted'); },
+  'ess-task': (el, app) => openSheet(app, `<h4>Assigned Task</h4>
+    ${['Submit monthly report', 'Update customer KYC', 'Team meeting at 3 PM'].map(t => `<div class="task" data-act="task"><i></i><span>${t}</span></div>`).join('')}`),
+  'pbs-tab': (el, app) => { setSeg(el); app.querySelector('[data-pane]').innerHTML = pbsPanes[el.dataset.v]; },
+  'pbs-report': (el, app) => openSheet(app, `<h4>Select Report Type</h4><div class="rlist">
+    ${['Customer Wise Report', 'Dealer Wise Report', 'Product Group Wise Report', 'Product Wise Report', 'Area Wise Report']
+      .map(r => `<button data-act="pbs-open" data-v="${r}">${r}</button>`).join('')}</div>`),
+  'pbs-open': (el, app) => { closeSheet(app); toastIn(app, `Opening ${el.dataset.v}…`); },
+  'xt-toggle': (el) => {
+    const box = el.parentElement;
+    box.classList.toggle('open');
+    el.lastElementChild.textContent = box.classList.contains('open') ? '−' : '+';
+  },
+};
+
+screenEl.addEventListener('click', (e) => {
+  const el = e.target.closest('[data-act]');
+  if (!el || !screenEl.contains(el)) return;
+  const app = el.closest('.app');
+  actions[el.dataset.act]?.(el, app);
+});
+
+let typeTimer;
+function typeName(delay) {
+  clearTimeout(typeTimer);
+  const el = document.getElementById('typed');
+  const name = 'Dipendra Pandey';
+  if (reduceMotion) { el.textContent = name; return; }
+  let n = 0;
+  const tick = () => { el.textContent = name.slice(0, ++n); if (n < name.length) typeTimer = setTimeout(tick, 70); };
+  typeTimer = setTimeout(tick, delay);
+}
+
+showScreen('lock');
+
+// ---------- Scroll engine: one rAF loop, transforms + opacity only ----------
+const stage = document.getElementById('stage');
+const tilt = document.getElementById('tilt');
+const stack = document.getElementById('stack');
+const glare = document.getElementById('glare');
+const layers = [...stack.querySelectorAll('.layer')];       // bottom → top: db, api, state, ui
+const labels = [...document.querySelectorAll('.lbls .lbl')]; // bottom → top, same order as layers
+const PERSPECTIVE = 1700;                                     // must match .stage perspective
+const RAD = Math.PI / 180;
+
+// Where a point in the stack's local 3D space lands on screen, using the same
+// rotateX · rotateY · rotateZ order and perspective as the CSS (pure math, no layout reads).
+function project(x, y, z, ax, ay, az, tx, ty) {
+  let c = Math.cos(az * RAD), s = Math.sin(az * RAD);
+  const x1 = x * c - y * s, y1 = x * s + y * c;
+  c = Math.cos(ay * RAD); s = Math.sin(ay * RAD);
+  const x2 = x1 * c + z * s, z2 = -x1 * s + z * c;
+  c = Math.cos(ax * RAD); s = Math.sin(ax * RAD);
+  const y3 = y1 * c - z2 * s + ty, z3 = y1 * s + z2 * c;
+  const k = PERSPECTIVE / (PERSPECTIVE - z3);
+  return [(x2 + tx) * k, y3 * k];
+}
+const panes = layers.map(l => l.querySelector('.pane'));
+const sats = [...document.querySelectorAll('.sat')];
+const tapHint = document.getElementById('tapHint');
+let stepEls = [...document.querySelectorAll('.step')];
+
+// Load the project list, attach each project's phone screen, then add its scroll step
+fetch('projects.json')
+  .then(res => res.json())
+  .then(list => {
+    list.forEach(p => projects.push({ ...p, ...phoneScreens[p.id] }));
+    buildSteps();
+    stepEls = [...document.querySelectorAll('.step')];
+    measure();
+  })
+  .catch(() => console.warn('Could not load projects.json'));
+const syncRing = document.getElementById('syncRing');
+const syncText = document.getElementById('syncText');
+const syncPill = document.getElementById('sync');
+
+let boxes = [], maxScroll = 1, mobile = false;
+function measure() {
+  mobile = innerWidth <= 900;
+  boxes = stepEls.map(el => { const r = el.getBoundingClientRect(); return { top: r.top + scrollY, h: r.height }; });
+  maxScroll = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+}
+measure();
+addEventListener('resize', measure);
+addEventListener('load', measure);
+document.fonts && document.fonts.ready.then(measure);
+new ResizeObserver(measure).observe(stepsEl);
+
+// mouse → target tilt
+let mx = 0, my = 0, tmx = 0, tmy = 0;
+addEventListener('pointermove', (e) => {
+  if (e.pointerType !== 'mouse') return;
+  tmx = (e.clientX / innerWidth - 0.5) * 2;
+  tmy = (e.clientY / innerHeight - 0.5) * 2;
+}, { passive: true });
+
+let stageVisible = true;
+new IntersectionObserver(([en]) => { stageVisible = en.isIntersecting; }).observe(document.getElementById('story'));
+
+let sy = scrollY, activeStep = 0;
+const sats0 = [[-1.15, -0.55], [1.2, -0.15], [-1.0, 0.6]];   // satellite directions (× phone width)
+
+function frame(t) {
+  // smoothed scroll for a buttery feel
+  sy = reduceMotion ? scrollY : sy + (scrollY - sy) * 0.16;
+  if (Math.abs(scrollY - sy) < 0.1) sy = scrollY;
+
+  // nav sync badge
+  const prog = clamp(scrollY / maxScroll);
+  syncRing.style.strokeDashoffset = (44 * (1 - prog)).toFixed(1);
+  const label = prog < 0.01 ? 'Offline' : prog > 0.985 ? 'Synced ✓' : `Syncing ${Math.round(prog * 100)}%`;
+  if (syncText.textContent !== label) { syncText.textContent = label; syncPill.classList.toggle('done', prog > 0.985); }
+
+  if (stageVisible) {
+    // which step is under the reading line, and how far through it we are
+    const line = sy + innerHeight * (mobile ? 0.72 : 0.5);
+    let i = 0;
+    while (i < boxes.length - 1 && line >= boxes[i + 1].top) i++;
+    const st = clamp((line - boxes[i].top) / boxes[i].h);
+    const el = stepEls[i];
+    const kind = el.dataset.kind;
+
+    if (i !== activeStep) {
+      stepEls[activeStep].classList.remove('on');
+      el.classList.add('on');
+      activeStep = i;
+    }
+
+    // explode amount e: 0 = assembled phone, 1 = fully exploded stack
+    let e = 0, sat = 0;
+    if (kind === 'stack') e = smooth(0.08, 0.42, st);
+    else if (kind === 'project') {
+      const p = +el.dataset.p;
+      const last = p === projects.length - 1;
+      e = Math.max(1 - smooth(0, 0.28, st), last ? 0 : smooth(0.72, 1, st));
+      if (projects[p].erp) sat = smooth(0.25, 0.42, st) * (1 - smooth(0.6, 0.72, st));
+      showScreen(p);
+    }
+    if (kind !== 'project') showScreen('lock');
+    const work = kind === 'project' && +el.dataset.p < 4;   // the four rebuilt company apps are tappable
+    tapHint.style.opacity = work ? (1 - smooth(0, 0.3, e)).toFixed(2) : '0';
+
+    // mouse tilt eases toward target
+    mx += (tmx - mx) * 0.07;
+    my += (tmy - my) * 0.07;
+    const float = reduceMotion ? 0 : Math.sin(t / 1100) * (mobile ? 4 : 8) * (1 - e);
+
+    const ax = lerp(6, 56, e) - my * 7;
+    const ay = lerp(-16, 0, e) + mx * 10;
+    const az = lerp(0, -36, e);
+    const pw = mobile ? 128 : 250;
+    const gap = pw * 0.34;
+
+    const ty = float + e * gap * 1.1;
+    const tx = -e * pw * (mobile ? 0.5 : 0.38);   // slide left while exploded to make room for the labels
+    tilt.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0)`;
+    stack.style.transform = `rotateX(${ax.toFixed(2)}deg) rotateY(${ay.toFixed(2)}deg) rotateZ(${az.toFixed(2)}deg)`;
+    glare.style.backgroundPosition = `${(50 + mx * 30 - e * 40).toFixed(1)}% 0`;
+
+    const layerAlpha = smooth(0, 0.12, e);
+    const lblAlpha = smooth(0.55, 0.95, e).toFixed(3);
+    layers.forEach((L, k) => {
+      const z = k * 1.5 + k * gap * e;
+      L.style.transform = `translate3d(0,0,${z.toFixed(2)}px)`;
+      if (k < 3) panes[k].style.opacity = layerAlpha.toFixed(3);
+      // pin the label (plus its leader line) to the right edge of this layer as it moves in 3D
+      // anchor low on the right edge: that's the part of each layer that peeks out from under the ones above
+      const [lx, ly] = project(pw / 2, pw * 0.6, z, ax, ay, az, tx, ty);
+      labels[k].style.opacity = lblAlpha;
+      labels[k].style.transform = `translate3d(${(lx + (mobile ? 18 : 34)).toFixed(1)}px, ${ly.toFixed(1)}px, 0) translateY(-50%)`;
+    });
+
+    // ERP: SFA / CRM / HRM phones fly out around the core platform
+    sats.forEach((s, k) => {
+      const [dx, dy] = sats0[k];
+      s.style.opacity = sat.toFixed(3);
+      s.style.transform = `translate3d(${(dx * pw * sat).toFixed(1)}px, ${(dy * pw * 1.2 * sat).toFixed(1)}px, 0) scale(${(0.6 + 0.4 * sat).toFixed(3)})`;
+    });
+  }
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+// ---------- Bento reveal ----------
+const bentoIO = new IntersectionObserver((entries) => {
+  entries.forEach((en) => {
+    if (!en.isIntersecting) return;
+    const k = [...en.target.parentElement.children].indexOf(en.target);
+    en.target.style.transitionDelay = `${(k % 4) * 70}ms`;
+    en.target.classList.add('in');
+    bentoIO.unobserve(en.target);
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.b').forEach(b => bentoIO.observe(b));
+
+// ---------- Chat contact form (Formspree) ----------
+const msgs = document.getElementById('msgs');
+const composer = document.getElementById('composer');
+const input = document.getElementById('chatInput');
+const sendBtn = composer.querySelector('button');
+const lead = { name: '', email: '', message: '' };
+let chatStage = 'name';
+
+function addMsg(text, who) {
+  const m = document.createElement('div');
+  m.className = `msg ${who}`;
+  m.textContent = text;
+  msgs.appendChild(m);
+  msgs.scrollTop = msgs.scrollHeight;
+  return m;
+}
+function botSay(text, delay = 650) {
+  return new Promise((res) => {
+    const typing = document.createElement('div');
+    typing.className = 'msg them';
+    typing.innerHTML = '<div class="typing"><i></i><i></i><i></i></div>';
+    msgs.appendChild(typing);
+    msgs.scrollTop = msgs.scrollHeight;
+    setTimeout(() => { typing.remove(); addMsg(text, 'them'); res(); }, reduceMotion ? 0 : delay);
+  });
+}
+
+let chatStarted = false;
+async function startChat() {
+  if (chatStarted) return;
+  chatStarted = true;
+  await botSay('Hey 👋 I\'m Dipendra.', 500);
+  await botSay('I\'m open to Flutter / full-stack roles and freelance work.');
+  await botSay('What\'s your name?');
+}
+new IntersectionObserver(([en]) => { if (en.isIntersecting) startChat(); }, { threshold: 0.4 }).observe(msgs);
+
+composer.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const text = input.value.trim();
+  if (!text || chatStage === 'sending' || chatStage === 'done') return;
+  addMsg(text, 'me');
+  input.value = '';
+
+  if (chatStage === 'name') {
+    lead.name = text;
+    chatStage = 'email';
+    input.type = 'email';
+    input.placeholder = 'you@example.com';
+    await botSay(`Nice to meet you, ${text}! What's your email?`);
+  } else if (chatStage === 'email') {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) { await botSay('Hmm, that email doesn\'t look right. Try again?'); return; }
+    lead.email = text;
+    chatStage = 'message';
+    input.type = 'text';
+    input.placeholder = 'Your message…';
+    await botSay('And what would you like to say?');
+  } else if (chatStage === 'message') {
+    lead.message = text;
+    chatStage = 'sending';
+    sendBtn.disabled = true;
+    const status = document.createElement('div');
+    status.className = 'msg-status';
+    status.textContent = 'Sending…';
+    msgs.appendChild(status);
+    try {
+      const fd = new FormData();
+      fd.append('name', lead.name);
+      fd.append('_replyto', lead.email);
+      fd.append('message', lead.message);
+      const res = await fetch('https://formspree.io/f/xkodewpj', { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error('send failed');
+      status.textContent = 'Delivered ✓✓';
+      chatStage = 'done';
+      input.placeholder = 'Message sent ✓';
+      input.disabled = true;
+      await botSay('Thanks! I\'ll get back to you soon. 🙌');
+    } catch {
+      status.textContent = 'Not delivered';
+      chatStage = 'message';
+      sendBtn.disabled = false;
+      await botSay('Hmm, that didn\'t go through. Try again, or WhatsApp me directly.');
+    }
+  }
+});
+
+// ---------- "Open to work" notification ----------
+const toast = document.getElementById('toast');
+const contactSec = document.getElementById('contact');
+let toastDismissed = false;
+setTimeout(() => {
+  const r = contactSec.getBoundingClientRect();
+  if (toastDismissed || r.top < innerHeight) return;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 8000);
+}, 10000);
+toast.addEventListener('click', (e) => {
+  toast.classList.remove('show');
+  toastDismissed = true;
+  if (e.target.id !== 'toastX') contactSec.scrollIntoView({ behavior: 'smooth' });
+});
+
+// ---------- Optional FPS meter: add ?fps to the URL ----------
+if (new URLSearchParams(location.search).has('fps')) {
+  const fpsEl = document.getElementById('fps');
+  fpsEl.style.display = 'block';
+  let n = 0, t0 = performance.now();
+  (function loop(now) {
+    n++;
+    if (now - t0 >= 1000) { fpsEl.textContent = `${Math.round(n * 1000 / (now - t0))} fps`; n = 0; t0 = now; }
+    requestAnimationFrame(loop);
+  })(t0);
+}
+</script>
 </body>
-
 </html>
