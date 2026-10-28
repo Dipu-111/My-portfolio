@@ -1,6 +1,7 @@
 [
   {
     "id": "sfa",
+    "featured": true,
     "name": "SFA: Sales Force Automation",
     "status": "In production",
     "accent": "#57d687",
@@ -10,15 +11,17 @@
       "ui": "Flutter", "state": "Riverpod", "apiName": "Flask REST", "data": "Oracle", "table": "attendance",
       "api": ["POST /attendance/logout", "GET /target-achieved", "GET /pending-orders"]
     },
-    "desc": "A field sales app for reps on the move: attendance with location, call/visit/sales/collection targets vs. achievement, and pending sales orders, all from their phone.",
-    "points": [
-      "Attendance log in/out with location capture",
-      "Target vs. achieved for calls, visits, sales & collections (Today / MTD)",
-      "Pending sales orders, beat plans and doctor/chemist visits"
+    "desc": "A field sales app for reps on the move: attendance with location, targets vs. achievement for calls, visits, sales and collections, beat plans and pending sales orders.",
+    "points": [],
+    "impact": "I built live location monitoring, the beat-plan, price and \"more info\" tabs, sales-vs-collection charts, the product comparison table and the incentive screens.",
+    "solved": [
+      "Being on Wi-Fi didn't mean the internet worked, so I built a network checker that probes Cloudflare (1.1.1.1) and Google (8.8.8.8) every 5 seconds and alerts the user when the connection drops. It now runs in both the CRM/SFA and ERP apps.",
+      "Reps and managers work in the Nepali calendar, so I moved collection dates, months and sales reports to Bikram Sambat dates."
     ]
   },
   {
     "id": "crm",
+    "featured": true,
     "name": "CRM: Lead & Customer Management",
     "status": "In production",
     "accent": "#6aa8ff",
@@ -28,15 +31,14 @@
       "ui": "Flutter", "state": "Riverpod + Freezed", "apiName": "Flask REST", "data": "Oracle", "table": "leads",
       "api": ["GET /leads/analysis", "GET /leads?type=", "POST /todo"]
     },
-    "desc": "Manages the sales pipeline from lead capture to close: lead KPIs, due dates, assignments and completion for every lead, plus to-dos and notifications.",
-    "points": [
-      "Total / closed / pending / overdue lead KPIs with progress",
-      "Lead cards with due dates, assignment and completion %",
-      "To-do list, notifications and quotation PDFs"
-    ]
+    "desc": "Manages the sales pipeline from lead capture to close: lead KPIs, timelines, quotations and win/loss dashboards.",
+    "points": [],
+    "impact": "I built lead creation with an approval flow, product tagging with notifications, quotation PDFs (payment details, VAT, alternate units), terms & conditions, lead reassignment, and the to-do calendar with comments and attachments.",
+    "solved": "Leads could be quoted below allowed prices, so I enforced discount limits on submit and re-checked the whole lead's product total during approval."
   },
   {
     "id": "ess",
+    "featured": true,
     "name": "ESS: Employee Self-Service",
     "status": "In production",
     "accent": "#f2b84b",
@@ -46,15 +48,13 @@
       "ui": "Flutter", "state": "Riverpod", "apiName": "Flask REST", "data": "Oracle", "table": "attendance_log",
       "api": ["POST /ess/check-in", "GET /ess/summary", "POST /ess/leave"]
     },
-    "desc": "A dedicated employee app split out of the ERP: check in/out with live location, monthly attendance summary, and one-tap leave, loan and task requests.",
-    "points": [
-      "Check in / check out with location",
-      "Attendance summary: present, absent, leave, late, overtime",
-      "Quick actions: apply leave, loan advance, assigned tasks"
-    ]
+    "desc": "A dedicated employee app split out of the ERP: check in/out with live location, attendance summary, leave and loan requests, and the holiday calendar.",
+    "points": [],
+    "impact": "I built check-in/out with distance tracking in meters, meal (tiffin) and overtime entries, and the holiday calendar."
   },
   {
     "id": "pbsmart",
+    "featured": true,
     "name": "PB Smart: ERP Management App",
     "status": "In production",
     "accent": "#b98cff",
@@ -65,11 +65,37 @@
       "ui": "Flutter", "state": "Riverpod + BLoC", "apiName": "Flask REST", "data": "Oracle", "table": "sales_summary",
       "api": ["GET /dashboard/sales", "GET /quick-info/cash", "GET /dispatch/today"]
     },
-    "desc": "The mobile face of the ERP that SFA, CRM and ESS plug into: management quick info across sales, collection, payment, purchase and production, with drill-down reports.",
+    "desc": "The management app of the core ERP that SFA, CRM and ESS plug into: quick info across sales, collection, payment, purchase and production, with drill-down reports.",
+    "points": [],
+    "impact": "I built the net sales, net purchase, cost contribution and customer-group reports (with 2-D scrolling tables), the vehicle information section, and login by username or phone number.",
+    "solved": "PDF and Excel downloads failed on the web build, so I added platform checks so exports work on Android, iOS and web."
+  },
+  {
+    "id": "khata",
+    "name": "Digital Khata: Expense Tracker",
+    "status": "Personal project",
+    "accent": "#4fd1c5",
+    "tags": ["Flutter", "Riverpod", "Hive", "Flask", "MySQL"],
+    "desc": "An offline-first personal and shop expense tracker. Data lives on the device in Hive and syncs to a Flask + MySQL backend with JWT auth.",
     "points": [
-      "Monthly / MTD / YTD target analysis and period quick info",
-      "Cash in hand, PDC, expense and VAT status tiles",
-      "Production & dispatch status with report drill-downs"
+      "CSV (Excel) and PDF export, backup & restore",
+      "Biometric app lock and secure storage"
+    ],
+    "links": [
+      { "label": "App code", "url": "https://github.com/Dipu-111/digital_khata_new" },
+      { "label": "Backend", "url": "https://github.com/Dipu-111/khata-backend" }
+    ]
+  },
+  {
+    "id": "ecommerce",
+    "name": "eCommerce App",
+    "status": "Personal project",
+    "accent": "#ffd36a",
+    "tags": ["Flutter", "GetX", "GetStorage", "MVC"],
+    "desc": "An offline-first eCommerce app with authentication, product listing and cart, built with MVC architecture and REST API integration.",
+    "points": [],
+    "links": [
+      { "label": "Code", "url": "https://github.com/Dipu-111/ecommerce_app-project-by-dp" }
     ]
   },
   {
@@ -77,49 +103,11 @@
     "name": "HouseHunt: Property Search",
     "status": "In progress",
     "accent": "#ff7a8a",
-    "tags": ["Flutter", "Riverpod", "Django", "SQLite"],
-    "stack": {
-      "ui": "Flutter", "state": "Riverpod", "apiName": "Django REST", "data": "SQLite", "table": "listings",
-      "api": ["GET /listings", "GET /listings?city=", "GET /listings/:id"]
-    },
-    "desc": "A property listing app for browsing houses, filtering by location and criteria, and viewing listing details. A personal project outside work.",
-    "points": [
-      "Property listing browse and search",
-      "Filter by location and property criteria",
-      "In active development"
-    ]
-  },
-  {
-    "id": "khata",
-    "name": "Digital Khata: Expense Tracker",
-    "status": "Personal project",
-    "accent": "#4fd1c5",
-    "tags": ["Flutter", "Riverpod", "Flask", "Oracle", "Google APIs"],
-    "stack": {
-      "ui": "Flutter", "state": "Riverpod", "apiName": "Flask + sync engine", "data": "Local DB → Oracle", "table": "expenses",
-      "api": ["POST /sync", "GET /export.xlsx", "POST /backup"]
-    },
-    "desc": "A personal and shop expense tracker that works offline first, then syncs when connectivity returns, with Excel export and backup/restore.",
-    "points": [
-      "Offline-first architecture with background sync",
-      "Excel export for record-keeping",
-      "Backup & restore to prevent data loss"
-    ]
-  },
-  {
-    "id": "todo",
-    "name": "To-do List App",
-    "status": "Personal project",
-    "accent": "#ffd36a",
-    "tags": ["Flutter", "Riverpod"],
-    "stack": {
-      "ui": "Flutter", "state": "Riverpod", "apiName": "Local only", "data": "On-device", "table": "tasks",
-      "api": ["add(task)", "toggle(id)", "remove(id)"]
-    },
-    "desc": "A lightweight task manager built to practise clean state management and UI patterns outside work projects.",
-    "points": [
-      "Fast task creation and tracking",
-      "Clean card-based UI"
+    "tags": ["Flutter", "Riverpod", "Django REST", "SQLite"],
+    "desc": "A property listing and search app with location and criteria-based filtering, backed by a Django REST API.",
+    "points": [],
+    "links": [
+      { "label": "Code", "url": "https://github.com/Dipu-111/househunt" }
     ]
   }
 ]
