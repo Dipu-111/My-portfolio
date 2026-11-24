@@ -28,6 +28,33 @@
     ]
   },
   {
+    "id": "svm",
+    "featured": true,
+    "name": "SVM: Service Management",
+    "status": "Solo · app + API",
+    "accent": "#ff9f43",
+    "tags": ["Flutter", "Riverpod", "Dio", "QR Scanner", "Flask", "Oracle"],
+    "stack": {
+      "ui": "Flutter",
+      "state": "Riverpod",
+      "apiName": "Flask REST",
+      "data": "Oracle",
+      "table": "svm_collection",
+      "api": [
+        "POST /svm_collection_save",
+        "POST /svm_ticket_validate",
+        "POST /svm_module_rights"
+      ]
+    },
+    "desc": "A client app for running rented land and shops: staff collect daily rent by scanning a customer's QR code or searching by ID, name or phone, and validate entry tickets at the gate with a QR scan.",
+    "points": [],
+    "impact": "I built the whole app myself from the client's requirements: QR and manual rent collection, today's paid and pending customers, a dashboard with date-range totals, monthly collection reports per customer, ticket validation with a scan history, and module-wise rights so each user only sees the sections they're allowed.",
+    "solved": [
+      "Rent is agreed monthly but collected every day, and Nepali months run 29 to 32 days, so the app works out the per-day amount from the days in the current Bikram Sambat month.",
+      "A ticket could be shown twice at the gate, so every scan is checked with the server. A reused ticket shows \"Already Used\" with the time it was first scanned, and a failed request can be scanned again."
+    ]
+  },
+  {
     "id": "crm",
     "featured": true,
     "name": "CRM: Lead & Customer Management",
@@ -93,33 +120,6 @@
     "points": [],
     "impact": "I built the net sales, net purchase, cost contribution and customer-group reports (with 2-D scrolling tables), the vehicle information section, and login by username or phone number.",
     "solved": "PDF and Excel downloads failed on the web build, so I added platform checks so exports work on Android, iOS and web."
-  },
-  {
-    "id": "svm",
-    "featured": true,
-    "name": "SVM: Service Management",
-    "status": "Solo build",
-    "accent": "#ff9f43",
-    "tags": ["Flutter", "Riverpod", "Dio", "QR Scanner", "Flask", "Oracle"],
-    "stack": {
-      "ui": "Flutter",
-      "state": "Riverpod",
-      "apiName": "Flask REST",
-      "data": "Oracle",
-      "table": "svm_collection",
-      "api": [
-        "POST /svm_collection_save",
-        "POST /svm_ticket_validate",
-        "POST /svm_module_rights"
-      ]
-    },
-    "desc": "A client app for running rented land and shops: staff collect daily rent by scanning a customer's QR code or searching by ID, name or phone, and validate entry tickets at the gate with a QR scan.",
-    "points": [],
-    "impact": "I built the whole app myself from the client's requirements: QR and manual rent collection, today's paid and pending customers, a dashboard with date-range totals, monthly collection reports per customer, ticket validation with a scan history, and module-wise rights so each user only sees the sections they're allowed.",
-    "solved": [
-      "Rent is agreed monthly but collected every day, and Nepali months run 29 to 32 days, so the app works out the per-day amount from the days in the current Bikram Sambat month.",
-      "A ticket could be shown twice at the gate, so every scan is checked with the server. A reused ticket shows \"Already Used\" with the time it was first scanned, and a failed request can be scanned again."
-    ]
   },
   {
     "id": "khata",

@@ -484,6 +484,28 @@ button {
   border-color: var(--green);
 }
 
+/* CV download, always visible (section links hide on small screens) */
+.nav-cv {
+  flex: none;
+  display: grid;
+  place-items: center;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--green);
+  border-radius: var(--radius-sm);
+  background: var(--green-soft);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-cv:hover {
+  background: var(--green);
+  color: var(--bg);
+}
+
 /* theme button + panel (dark/light, accent, reset) */
 .theme-btn {
   flex: none;
@@ -720,6 +742,10 @@ button {
 }
 .step.on {
   opacity: 1;
+}
+/* app steps are taller so each phase (layers held, assemble, phone screen, explode) gets room */
+.step[data-kind="project"] {
+  min-height: 160vh;
 }
 .step h1 {
   margin: 10px 0 16px;
@@ -1418,6 +1444,9 @@ button {
   .sync {
     margin-left: auto;
   }
+  .nav-inner {
+    gap: 10px;
+  }
   .story {
     grid-template-columns: 1fr;
   }
@@ -1427,6 +1456,9 @@ button {
   .step {
     min-height: 75vh;
     padding: 30px 0;
+  }
+  .step[data-kind="project"] {
+    min-height: 130vh;
   }
   .stats > div {
     padding: 0 16px;

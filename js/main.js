@@ -90,15 +90,16 @@ function showScreen(key) {
   // each work app has its own accent; the lock screen falls back to the chosen brand colour
   if (p) root.style.setProperty("--accent", p.accent);
   else root.style.removeProperty("--accent");
-  const apply = () => {
-    renderApp(p);
-    setStackLabels(p ? p.stack : generic);
-    screenEl.classList.remove("swap");
-    if (!p) typeName(first ? 500 : 0);
-  };
-  if (first || reduceMotion) return apply();
+  // Draw the new app on this same frame. A delayed swap landed after the stack had
+  // started closing on fast scrolls, so the old app showed on a half-closed phone.
+  renderApp(p);
+  setStackLabels(p ? p.stack : generic);
+  if (!p) typeName(first ? 500 : 0);
+  if (first || reduceMotion) return;
+  // restart the fade-in animation
+  screenEl.classList.remove("swap");
+  void screenEl.offsetWidth;
   screenEl.classList.add("swap");
-  setTimeout(apply, 180);
 }
 
 function renderApp(p, target = screenEl) {
@@ -437,18 +438,23 @@ function frame(t) {
     }
 
     // explode amount e: 0 = assembled phone, 1 = fully exploded stack
+    // labelFade dims the stack labels right at an app boundary, where their text swaps
     let e = 0,
-      sat = 0;
+      sat = 0,
+      labelFade = 1;
     if (kind === "stack") e = smooth(0.08, 0.42, st);
     else if (kind === "project") {
       const p = +el.dataset.p;
       const last = p === projects.length - 1;
+      // Each app: hold exploded (its 4 layers labelled) → assemble → phone screen → explode → hold.
+      // The holds at the end of one app and the start of the next join into one long pause.
       e = Math.max(
-        1 - smooth(0, 0.28, st),
-        last ? 0 : smooth(0.72, 1, st),
+        1 - smooth(0.15, 0.37, st),
+        last ? 0 : smooth(0.63, 0.85, st),
       );
+      labelFade = smooth(0, 0.05, st) * (last ? 1 : 1 - smooth(0.95, 1, st));
       if (projects[p].erp)
-        sat = smooth(0.25, 0.42, st) * (1 - smooth(0.6, 0.72, st));
+        sat = smooth(0.36, 0.44, st) * (1 - smooth(0.56, 0.64, st));
       showScreen(p);
     }
     if (kind !== "project") showScreen("lock");
@@ -477,7 +483,7 @@ function frame(t) {
     glare.style.backgroundPosition = `${(50 + mx * 30 - e * 40).toFixed(1)}% 0`;
 
     const layerAlpha = smooth(0, 0.12, e);
-    const lblAlpha = smooth(0.55, 0.95, e).toFixed(3);
+    const lblAlpha = (smooth(0.55, 0.95, e) * labelFade).toFixed(3);
     layers.forEach((L, k) => {
       const z = k * 1.5 + k * gap * e;
       L.style.transform = `translate3d(0,0,${z.toFixed(2)}px)`;

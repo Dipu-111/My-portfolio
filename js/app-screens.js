@@ -105,7 +105,7 @@ const sfaScreen = `
   <div class="tr"><span>Demo Traders</span><span>120</span><span>80</span><span>40</span></div>
 </div>
     </div>
-    <div class="bnav dark"><button class="on">${ic("dash")}SFA Dashboard</button><button data-act="goto" data-v="1">${ic("dash")}CRM Dashboard</button></div>
+    <div class="bnav dark"><button class="on">${ic("dash")}SFA Dashboard</button><button data-act="goto" data-v="crm">${ic("dash")}CRM Dashboard</button></div>
     <div class="toast-in"></div>
   </div>`;
 
@@ -196,7 +196,7 @@ ${metric("Overdue", 8, "17%", 17, "linear-gradient(135deg, rgb(233,155,148), rgb
     <div class="sec-t"><span data-sec>All Leads</span><a>View All</a></div>
     <div data-leads></div>
     <button class="fab" data-act="toast" data-v="Opening new lead form…">${ic("add")}Lead</button>
-    <div class="bnav dark"><button data-act="goto" data-v="0">${ic("dash")}SFA Dashboard</button><button class="on">${ic("dash")}CRM Dashboard</button></div>
+    <div class="bnav dark"><button data-act="goto" data-v="sfa">${ic("dash")}SFA Dashboard</button><button class="on">${ic("dash")}CRM Dashboard</button></div>
     <div class="scrim" data-act="close-sheet"></div><div class="sheet" data-sheet></div>
     <div class="toast-in"></div>
   </div>`;
@@ -691,7 +691,7 @@ function essCheckOut(app) {
 
 const actions = {
   goto: (el) =>
-    renderApp(projects[+el.dataset.v], el.closest(".screen-inner")),
+    renderApp(projects.find((p) => p.id === el.dataset.v), el.closest(".screen-inner")),
   toast: (el, app) => toastIn(app, el.dataset.v),
   "close-sheet": (el, app) => closeSheet(app),
   "sfa-tab": (el, app) => {

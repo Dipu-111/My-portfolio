@@ -26,11 +26,10 @@
   height: 460px;
   margin: -230px 0 0 -230px;
   border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.14;
-  filter: blur(90px);
+  /* soft radial fade instead of filter: blur(), which re-rendered on every accent change */
+  background: radial-gradient(closest-side, var(--accent), transparent);
+  opacity: 0.2;
   pointer-events: none;
-  transition: background-color 0.6s;
 }
 .tilt {
   position: absolute;
@@ -269,10 +268,15 @@
   flex-direction: column;
   gap: 0.7em;
   padding: 15% 7% 7%;
-  transition: opacity 0.25s;
 }
+/* the new app fades in as it is drawn (see showScreen in main.js) */
 .screen-inner.swap {
-  opacity: 0;
+  animation: screenIn 0.3s ease-out;
+}
+@keyframes screenIn {
+  from {
+    opacity: 0;
+  }
 }
 
 /* ---------- Lock screen (intro) ---------- */
