@@ -452,7 +452,7 @@ function frame(t) {
       showScreen(p);
     }
     if (kind !== "project") showScreen("lock");
-    const work = kind === "project" && +el.dataset.p < 4; // the four rebuilt company apps are tappable
+    const work = kind === "project" && !!projects[+el.dataset.p].screen; // apps with a rebuilt phone screen are tappable
     tapHint.style.opacity = work
       ? (1 - smooth(0, 0.3, e)).toFixed(2)
       : "0";

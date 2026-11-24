@@ -1,4 +1,4 @@
-// Phone app screens rebuilt from the Flutter code (SFA, CRM, ESS, PB Smart), with
+// Phone app screens rebuilt from the Flutter code (SFA, CRM, ESS, PB Smart, SVM), with
 // demo data only, plus the tap actions that make them interactive.
 // Loaded before main.js; both are classic scripts sharing one global scope.
 
@@ -34,6 +34,25 @@ const ICONS = {
   target:
     "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",
 };
+// Material icons used by the SVM screens
+Object.assign(ICONS, {
+  qr: "M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6 8h1.5v1.5H13V13zm1.5 1.5H16V16h-1.5v-1.5zM16 13h1.5v1.5H16V13zm-3 3h1.5v1.5H13V16zm1.5 1.5H16V19h-1.5v-1.5zM16 16h1.5v1.5H16V16zm1.5-1.5H19V16h-1.5v-1.5zm0 3H19V19h-1.5v-1.5zM22 7h-2V4h-3V2h5v5zm0 15v-5h-2v3h-3v2h5zM2 22h5v-2H4v-3H2v5zM2 2v5h2V4h3V2H2z",
+  ticket:
+    "M22 10V6c0-1.11-.9-2-2-2H4c-1.1 0-1.99.89-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2zm-9 7.5h-2v-2h2v2zm0-4.5h-2v-2h2v2zm0-4.5h-2v-2h2v2z",
+  verified:
+    "M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z",
+  history:
+    "M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z",
+  block:
+    "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z",
+  group:
+    "M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z",
+  play: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z",
+  keyboard:
+    "M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z",
+  doc: "M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z",
+  arrow: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z",
+});
 const ic = (n) =>
   `<svg class="i" viewBox="0 0 24 24"><path d="${ICONS[n]}"/></svg>`;
 const statusBar = (bg, fg) =>
@@ -364,6 +383,226 @@ ${statusBar("#2196F3", "#fff")}
     <div class="toast-in"></div>
   </div>`;
 
+// SVM: service_management_screen.dart (module tabs), home/dashboard_tab.dart,
+// collection/collection_screen.dart, customers/customers_tab.dart, ticket/ticket_screen.dart
+const SVM_DAYS = 30; // days in the demo Nepali month; per day amount = monthly ÷ days
+const svmRs = (n) => `Rs ${Math.round(n).toLocaleString("en-IN")}`;
+const svmCustomers = () =>
+  [
+    ["Sample Tea House", "112", 15000, true],
+    ["Demo Fancy Store", "118", 18000, false],
+    ["Test Mobile Center", "124", 12000, false],
+    ["Acme Cold Store", "131", 21000, true],
+    ["Demo Tailors", "137", 9000, false],
+  ].map(([n, id, monthly, paid]) => ({
+    n,
+    id,
+    ph: `98000${id.padStart(5, "0")}`,
+    monthly,
+    day: monthly / SVM_DAYS,
+    paid,
+  }));
+// Demo scans cycle through these results, like real tickets at the gate
+const svmTickets = [
+  { s: "valid", no: "T-0045", item: "Entry Ticket (Adult)", qty: "2 Nos." },
+  { s: "valid", no: "T-0046", item: "Boating", qty: "1 Nos." },
+  { s: "used", no: "T-0045", item: "Entry Ticket (Adult)", qty: "2 Nos." },
+  { s: "invalid", no: "", item: "", qty: "" },
+];
+const svmStatus = {
+  valid: ["#16A34A", "verified", "Valid Ticket", "Entry allowed"],
+  used: ["#E08A00", "history", "Already Used", "Do not allow entry"],
+  invalid: ["#DC2626", "block", "Invalid Ticket", "Do not allow entry"],
+};
+const svmScreen = `
+  <div class="app svm">
+    ${statusBar("#F3F6FC", "#0F1B3D")}
+    <div class="sv-hd">
+      <span class="sv-logo">${ic("home")}</span>
+      <div class="sv-ttl"><b>PB Service Management</b><small>Demo User</small></div>
+      <button class="sv-menu" data-act="svm-menu">${ic("menu")}</button>
+    </div>
+    <div class="sv-sw">
+      <button class="on" data-act="svm-mod" data-v="col">${ic("money")}<span>Collection Management</span></button>
+      <button data-act="svm-mod" data-v="tkt">${ic("ticket")}<span>Ticket Management</span></button>
+    </div>
+    <div class="abody" data-pane></div>
+    <div class="bnav sv-nav" data-nav>
+      <button class="on" data-act="svm-tab" data-v="home">${ic("home")}Home</button>
+      <button data-act="svm-tab" data-v="collect">${ic("qr")}Collection</button>
+      <button data-act="svm-tab" data-v="customers">${ic("group")}Customers</button>
+    </div>
+    <div class="scrim" data-act="close-sheet"></div><div class="sheet" data-sheet></div>
+    <div class="toast-in"></div>
+  </div>`;
+
+// Fresh demo state per rendered phone, kept on the .app element
+function svmState(app) {
+  if (!app.svm) {
+    const list = svmCustomers();
+    app.svm = {
+      mod: "col",
+      tab: "home",
+      list,
+      cur: list.find((c) => !c.paid),
+      recent: [
+        { c: list[3], amt: list[3].day, v: 2041, t: "10:24 AM" },
+        { c: list[0], amt: list[0].day, v: 2040, t: "09:58 AM" },
+      ],
+      scans: [],
+      checking: false,
+    };
+  }
+  return app.svm;
+}
+
+const svmBadge = (paid) =>
+  `<span class="sv-badge ${paid ? "ok" : "no"}">${paid ? "Received" : "Pending"}</span>`;
+
+function svmHome(st) {
+  const TOTAL = 50, // demo totals: other customers already collected today
+    BASE_N = 29,
+    BASE_AMT = 17400,
+    TARGET = 30000;
+  const paidNow = st.list.filter((c) => c.paid);
+  const n = BASE_N + paidNow.length;
+  const amt = BASE_AMT + paidNow.reduce((s, c) => s + c.day, 0);
+  const pct = Math.round((amt / TARGET) * 100);
+  return `
+    <div class="sv-date">${ic("cal")}Tue, 24 Nov 2026 • 8 Mangsir 2083</div>
+    <div class="sv-card">
+      <div class="sv-row"><span class="sv-mut">Today's Collection</span><span class="sp"></span><span class="sv-pct">${pct}%</span></div>
+      <div class="sv-big">${svmRs(amt)}</div>
+      <div class="sv-mut sm">Target: ${svmRs(TARGET)}</div>
+      <div class="sv-prog"><i style="width:${Math.min(pct, 100)}%"></i></div>
+      <div class="sv-row sm"><span>${n} of ${TOTAL} customers collected</span><span class="sp"></span><span class="sv-mut">${svmRs(Math.max(TARGET - amt, 0))} left</span></div>
+      <div class="sv-2">
+        <button class="sv-stat ok" data-act="svm-tab" data-v="customers">${ic("done")}Paid today<b>${n}</b></button>
+        <button class="sv-stat no" data-act="svm-tab" data-v="customers">${ic("hourglass")}Pending<b>${TOTAL - n}</b></button>
+      </div>
+    </div>
+    <button class="sv-start" data-act="svm-tab" data-v="collect">${ic("play")}Start Collection</button>
+    <div class="sv-sec"><b>This Month</b><span>Mangsir 2083 ▾</span></div>
+    <div class="sv-2">
+      <div class="sv-card sv-ms"><small style="color:#1D61E7">${ic("money")}<span>Collected</span></small><b>${svmRs(412600 + amt)}</b></div>
+      <div class="sv-card sv-ms"><small style="color:#E08A00">${ic("hourglass")}<span>Pending</span></small><b>${svmRs(Math.max(487400 - amt, 0))}</b></div>
+    </div>
+    <div class="sv-sec"><b>Recent Collections</b><span>Today</span></div>
+    ${st.recent
+      .slice(0, 2)
+      .map(
+        (r) => `
+      <div class="sv-card sv-rec">
+        <div><b>${r.c.n}</b><small>ID ${r.c.id} · V.No ${r.v}</small></div>
+        <div class="sv-r"><b>${svmRs(r.amt)}</b><small>${r.t} <span class="sv-badge ok">Paid</span></small></div>
+      </div>`,
+      )
+      .join("")}`;
+}
+
+function svmCollect(st) {
+  const c = st.cur;
+  const rows = [
+    ["Customer ID", c.id],
+    ["Phone", c.ph],
+    ["Monthly Amount", svmRs(c.monthly)],
+    ["Per Day Amount", svmRs(c.day)],
+  ];
+  return `
+    <div class="sv-pt"><b>Rent Collection</b><small>Collecting from ${c.n}</small></div>
+    <div class="sv-2">
+      <button class="sv-mode" style="--c:#1565C0" data-act="svm-scan">${ic("qr")}<span><b>Scan QR Code</b><small>Use camera</small></span></button>
+      <button class="sv-mode" style="--c:#00897B" data-act="svm-search">${ic("keyboard")}<span><b>Manual Entry</b><small>ID, name or phone</small></span></button>
+    </div>
+    <div class="sv-info">Mangsir 2083 has ${SVM_DAYS} days · Per day = Monthly ÷ ${SVM_DAYS}</div>
+    <div class="sv-card">
+      <div class="sv-row"><b class="sv-name">${c.n}</b><span class="sp"></span>${svmBadge(c.paid)}</div>
+      ${rows.map(([k, v]) => `<div class="sv-kv"><span>${k}</span><b>${v}</b></div>`).join("")}
+      <button class="sv-pay${c.paid ? " done" : ""}" data-act="svm-pay">${ic(c.paid ? "done" : "money")}${c.paid ? `Collected ${svmRs(c.day)} today` : `Collect ${svmRs(c.day)}`}</button>
+      <div class="sv-2">
+        <button class="sv-out" data-act="svm-report">${ic("doc")}Monthly Report</button>
+        <button class="sv-out" data-act="svm-next">${ic("arrow")}Next Entry</button>
+      </div>
+    </div>`;
+}
+
+const svmTile = (c) => `
+  <div class="sv-card sv-cus tap" data-act="svm-open" data-v="${c.id}">
+    <span class="sv-av">${c.n[0]}</span>
+    <div><b>${c.n}</b><small>ID ${c.id} · ${c.ph}</small></div>
+    <div class="sv-r"><b>${svmRs(c.day)}</b><small>per day</small>${svmBadge(c.paid)}</div>
+  </div>`;
+
+function svmCustomersPane(st) {
+  return `
+    <div class="sv-search">⌕ Search name, ID, phone or PAN</div>
+    ${st.list.map(svmTile).join("")}`;
+}
+
+function svmTicketPane(st) {
+  const last = st.scans[0];
+  const count = (s) => st.scans.filter((x) => x.s === s).length;
+  const stat = (label, n, color, icon) =>
+    `<div class="sv-ts" style="--c:${color}">${ic(icon)}<b>${n}</b><small>${label}</small></div>`;
+  let card;
+  if (st.checking)
+    card = `<div class="sv-card sv-empty"><span class="sv-spin"></span>Checking ticket...</div>`;
+  else if (!last)
+    card = `<div class="sv-card sv-empty">${ic("ticket")}<b>No ticket scanned yet</b><small>Result of each scanned ticket shows here</small></div>`;
+  else {
+    const [color, icon, title, sub] = svmStatus[last.s];
+    const info = last.no
+      ? [
+          ["Ticket No", last.no],
+          ["Item", last.item],
+          ["Quantity", last.qty],
+        ]
+      : [["Scanned", "Unknown QR"]];
+    card = `
+      <div class="sv-res" style="--c:${color}">
+        <div class="sv-band"><span class="sv-ring">${ic(icon)}</span><b>${title}</b><small>${last.s === "used" ? `Used at ${last.usedAt}` : sub}</small></div>
+        <div class="sv-dash"></div>
+        ${info.map(([k, v]) => `<div class="sv-kv"><span>${k}</span><b>${v}</b></div>`).join("")}
+      </div>`;
+  }
+  return `
+    <div class="sv-hero tap" data-act="svm-ticket">
+      <div><b>Ticket Validation</b><span class="sv-live"><i></i>Live</span><small>Tue, 24 Nov 2026 • 8 Mangsir 2083</small>
+        <small class="sv-hint">${st.checking ? "Checking ticket..." : "Tap to scan ticket QR"}</small></div>
+      <span class="sv-scan${st.checking ? " busy" : ""}">${ic("qr")}</span>
+    </div>
+    <div class="sv-4">
+      ${stat("Scanned", st.scans.length, "#1D61E7", "qr")}${stat("Valid", count("valid"), "#16A34A", "verified")}
+      ${stat("Used", count("used"), "#E08A00", "history")}${stat("Rejected", count("invalid"), "#DC2626", "block")}
+    </div>
+    <div class="sv-sec"><b>Last Scan</b></div>
+    ${card}
+    <button class="sv-start sv-bottom" data-act="svm-ticket">${ic("qr")}${last ? "Scan Next Ticket" : "Scan Ticket"}</button>`;
+}
+
+function renderSvm(app) {
+  const st = svmState(app);
+  app.querySelectorAll(".sv-sw button").forEach((b) =>
+    b.classList.toggle("on", b.dataset.v === st.mod),
+  );
+  app.querySelectorAll("[data-nav] button").forEach((b) =>
+    b.classList.toggle("on", b.dataset.v === st.tab),
+  );
+  // the ticket module has no bottom tabs
+  app.querySelector("[data-nav]").style.display =
+    st.mod === "col" ? "" : "none";
+  const pane = app.querySelector("[data-pane]");
+  pane.innerHTML =
+    st.mod === "tkt"
+      ? svmTicketPane(st)
+      : st.tab === "collect"
+        ? svmCollect(st)
+        : st.tab === "customers"
+          ? svmCustomersPane(st)
+          : svmHome(st);
+  pane.scrollTop = 0;
+}
+
 // ---------- Phone screens, matched to projects.json by id ----------
 const phoneScreens = {
   sfa: {
@@ -390,6 +629,7 @@ const phoneScreens = {
     },
   },
   pbsmart: { screen: pbsScreen },
+  svm: { screen: svmScreen, init: (app) => renderSvm(app) },
 };
 
 // ---------- Tap actions inside the rebuilt app screens ----------
@@ -568,6 +808,109 @@ const actions = {
   "pbs-open": (el, app) => {
     closeSheet(app);
     toastIn(app, `Opening ${el.dataset.v}…`);
+  },
+  "svm-mod": (el, app) => {
+    svmState(app).mod = el.dataset.v;
+    renderSvm(app);
+  },
+  "svm-tab": (el, app) => {
+    svmState(app).tab = el.dataset.v;
+    renderSvm(app);
+  },
+  "svm-menu": (el, app) =>
+    openSheet(
+      app,
+      `<div class="sv-drawer"><span class="sv-av">D</span><div><b>Demo User</b><small>@demo</small></div></div>
+    ${[
+      ["Company", "Demo Properties Pvt. Ltd."],
+      ["PAN No", "600000000"],
+      ["Address", "Kathmandu"],
+      ["Fiscal Year", "2083/84"],
+    ]
+      .map(([k, v]) => `<div class="sv-kv"><span>${k}</span><b>${v}</b></div>`)
+      .join("")}
+    <div class="sv-ver">Version 1.0.0</div>`,
+    ),
+  // QR scan in the demo picks the next customer who hasn't paid today
+  "svm-scan": (el, app) => {
+    const st = svmState(app);
+    toastIn(app, "Scanning QR code…");
+    setTimeout(() => {
+      const i = st.list.indexOf(st.cur);
+      st.cur =
+        [...st.list.slice(i + 1), ...st.list].find((c) => !c.paid) ||
+        st.cur;
+      renderSvm(app);
+      toastIn(app, `Found ${st.cur.n}`);
+    }, 700);
+  },
+  "svm-search": (el, app) =>
+    openSheet(
+      app,
+      `<h4>Customer ID, name or phone</h4>
+    ${svmState(app).list.map(svmTile).join("")}`,
+    ),
+  "svm-open": (el, app) => {
+    const st = svmState(app);
+    st.cur = st.list.find((c) => c.id === el.dataset.v);
+    st.tab = "collect";
+    closeSheet(app);
+    renderSvm(app);
+  },
+  "svm-next": (el, app) => {
+    const st = svmState(app);
+    st.cur = st.list[(st.list.indexOf(st.cur) + 1) % st.list.length];
+    renderSvm(app);
+  },
+  "svm-pay": (el, app) => {
+    const c = svmState(app).cur;
+    if (c.paid) return toastIn(app, "Already collected today");
+    openSheet(
+      app,
+      `<h4>Collect from ${c.n}</h4>
+    <div class="sv-field"><small>Amount</small>${svmRs(c.day)}</div>
+    <div class="sv-field"><small>Remarks</small>&nbsp;</div>
+    <button class="close" style="background:#16A34A" data-act="svm-save">Save</button>`,
+    );
+  },
+  "svm-save": (el, app) => {
+    const st = svmState(app);
+    st.cur.paid = true;
+    const v = 2042 + st.recent.length - 2;
+    st.recent.unshift({ c: st.cur, amt: st.cur.day, v, t: nowTime() });
+    closeSheet(app);
+    renderSvm(app);
+    toastIn(app, `Saved, V.No ${v}`);
+  },
+  "svm-report": (el, app) => {
+    const c = svmState(app).cur;
+    openSheet(
+      app,
+      `<h4>${c.n} · Mangsir 2083</h4>
+    <div class="tbl c3"><div class="tr th"><span>Date</span><span>V.No</span><span>Amount</span></div>
+    ${[8, 7, 6, 5]
+      .map((d, k) => {
+        // demo: 6 Mangsir was missed, today depends on whether it's collected
+        const got = d === 8 ? c.paid : d !== 6;
+        return `<div class="tr"><span>${d} Mangsir</span><span>${got ? 2041 - k * 5 : "-"}</span><span>${got ? svmRs(c.day) : "Unpaid"}</span></div>`;
+      })
+      .join("")}</div>`,
+    );
+  },
+  "svm-ticket": (el, app) => {
+    const st = svmState(app);
+    if (st.checking) return;
+    st.checking = true;
+    renderSvm(app);
+    setTimeout(() => {
+      const t = { ...svmTickets[st.scans.length % svmTickets.length] };
+      if (t.s === "used")
+        t.usedAt = st.scans.find((x) => x.no === t.no)?.at || "09:15 AM";
+      t.at = nowTime();
+      st.scans.unshift(t);
+      st.checking = false;
+      renderSvm(app);
+    }, 800);
   },
   "xt-toggle": (el) => {
     const box = el.parentElement;
